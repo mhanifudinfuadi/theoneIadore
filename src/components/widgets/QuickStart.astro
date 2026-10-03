@@ -14,9 +14,9 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   commands = [],
-  prompt = '$',
-  copyLabel = 'Copy',
-  copiedLabel = 'Copied',
+  prompt = '⛩',
+  copyLabel = '学びを見る',
+  copiedLabel = '歩みを開',
   items = [],
   actions = [],
   note,
@@ -56,7 +56,7 @@ const commandHtml = commands
             <span class="h-3 w-3 rounded-full bg-amber-300/80"></span>
             <span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
           </span>
-          <span class="ml-2 text-xs font-medium text-slate-400">Terminal</span>
+          <span class="ml-2 text-xs font-medium text-slate-400">tabler:book-2</span>
         </span>
         <button
           type="button"
