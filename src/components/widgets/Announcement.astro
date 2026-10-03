@@ -17,11 +17,11 @@ const {
 ---
 
 <div
-  class="text-sm bg-pink-150 text-blue white:bg-transparent white:border-b white:border-white-800 white:text-blue-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
+  class="text-sm bg-pink-250 text-blue-600 white:bg-transparent white:border-b white:border-white-500 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
 > 
   {
     badge && (
-      <span class="bg-white/20 white:bg-orange-300 text-blue white:text-blue font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
+      <span class="bg-white/20 white:bg-orange-300 text-blue-600 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
         {badge}
       </span>
     )
@@ -29,7 +29,7 @@ const {
   {
     text &&
       (href ? (
-        <a href={href} class="text-blue-300 hover:underline white:text-blue-400 font-medium" set:html={text} />
+        <a href={href} class="text-blue-500 hover:underline white:text-blue-500 font-medium" set:html={text} />
       ) : (
         <span class="text-blue-300 white:text-blue-400 font-medium" set:html={text} />
       ))
@@ -41,7 +41,7 @@ const {
         href="https://www.instagram.com/idar.layla/"
         target="_blank"
         rel="noopener noreferrer"
-        class="ml-2 text-pink-400 hover:text-pink-300 font-medium"
+        class="ml-2 text-pink-700 hover:text-pink-550 font-medium"
       >
         Instagram
       </a>
