@@ -1,8 +1,6 @@
 # Ida Rosnida Laila, S.H., M.E., M.Ids.
 # Analis Kebijakan Publik & Komunikator Sektor Publik
 
-  
-
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset=".github/assets/lighthouse-dark.svg">
   <img src=".github/assets/lighthouse-light.svg" align="right" alt="Lighthouse scores: Performance 100, Accessibility 100, Best Practices 100, SEO 100" width="100" height="358">
