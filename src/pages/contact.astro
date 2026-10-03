@@ -5,76 +5,96 @@ import ContactUs from '~/components/widgets/Contact.astro';
 import Features2 from '~/components/widgets/Features2.astro';
 
 const metadata = {
-  title: 'Contact',
+  title: 'Hubungi Kami | Literasi, Edukasi & Hubungan Kelembagaan Perpajakan',
   description:
-    'Contact page demo built with AstroWind: a form, contact details and support links in one accessible layout.',
+    'Layanan komunikasi publik, kemitraan Tax Center, edukasi perpajakan, dan literasi bersama Ida Rosnida Laila, S.H., M.E., M.Ids. (Direktorat Jenderal Pajak).',
 };
 ---
 
 <Layout metadata={metadata}>
   <!-- HeroText Widget ******************* -->
+  <HeroText
+    tagline="Kontak & Kolaborasi"
+    title="Mari Terhubung & Berkolaborasi!"
+    subtitle="Ruang komunikasi untuk sinergi edukasi perpajakan, kemitraan Tax Center perguruan tinggi, literasi publik, dan narasumber/moderator kegiatan."
+  />
 
-  <HeroText tagline="Contact" title="Let's Connect!" />
-
+  <!-- ContactUs Widget ****************** -->
   <ContactUs
     id="form"
-    title="Drop us a message today!"
-    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    title="Kirimkan Pesan Anda Hari Ini"
+    subtitle="Ingin mendiskusikan kemitraan Tax Center, literasi perpajakan, atau kegiatan edukasi publik? Silakan isi formulir di bawah ini."
     inputs={[
       {
         type: 'text',
         name: 'name',
-        label: 'Name',
+        label: 'Nama Lengkap',
       },
       {
         type: 'email',
         name: 'email',
-        label: 'Email',
+        label: 'Alamat Email',
+      },
+      {
+        type: 'text',
+        name: 'institution',
+        label: 'Instansi / Perguruan Tinggi / Media',
       },
     ]}
     textarea={{
-      label: 'Message',
+      label: 'Pesan / Topik Diskusi',
     }}
     disclaimer={{
       label:
-        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+        'Dengan mengirimkan formulir ini, Anda menyetujui pengumpulan informasi kontak untuk keperluan korespondensi profesional dan edukasi publik.',
     }}
-    description="Our support team typically responds within 24 business hours."
+    description="Pesan Anda akan ditanggapi melalui saluran korespondensi resmi atau kontak profesional."
   />
 
-  <!-- Features2 Widget ************** -->
-
+  <!-- Features2 Widget ****************** -->
   <Features2
-    title="We are here to help!"
+    title="Fokus Layanan & Kolaborasi Publik"
+    subtitle="Bidang kontribusi publik dan komunikasi kelembagaan yang dikembangkan"
     items={[
       {
-        title: 'General support',
-        description: `Chat with us for inquiries related to account management, website navigation, payment issues, accessing purchased templates or general questions about the website's functionality.`,
-      },
-      {
-        title: 'Contact sales',
+        title: 'Kemitraan Tax Center & Kampus',
         description:
-          'Chat with us for questions about purchases, customization options, licensing for commercial use, inquiries about specific template, etc.',
+          'Inisiasi kerja sama, perpanjangan MoU Tax Center, edukasi pemadanan NIK-NPWP, serta pembinaan Relawan Pajak mahasiswa di berbagai perguruan tinggi.',
+        icon: 'tabler:school',
       },
       {
-        title: 'Technical support',
+        title: 'Literasi & Lokakarya Penulisan',
         description:
-          'Chat with us when facing issues like template installation, problems editing difficulties, compatibility issues with software or download errors, or other technical challenges related to using the templates.',
+          'Fasilitasi Club Literacy, pelatihan penulisan opini publik, dan pembuatan konten edukasi perpajakan yang relatable bagi mahasiswa dan masyarakat.',
+        icon: 'tabler:books',
       },
       {
-        title: 'Phone',
-        description: '+1 (234) 567-890',
-        icon: 'tabler:headset',
+        title: 'Siniar, Moderasi & Media Visit',
+        description:
+          'Pengalaman memandu podcast/siniar (seperti TER/PPh 21), moderator lokakarya nasional, serta hubungan media dan sinergi publikasi bersama pers/radio.',
+        icon: 'tabler:microphone',
       },
       {
-        title: 'Email',
-        description: 'contact@support.com',
-        icon: 'tabler:mail',
+        title: 'Pengalaman Administrasi & Pelayanan Pajak',
+        description:
+          'Rekam jejak pelayanan wajib pajak, analisis kepatuhan (studi kasus AR), insentif pajak Pemulihan Ekonomi Nasional (PEN), hingga mitigasi pelanggaran pajak.',
+        icon: 'tabler:file-text',
       },
       {
-        title: 'Location',
-        description: '1234 Lorem Ipsum St, 12345, Miami, EEUU',
-        icon: 'tabler:map-pin',
+        title: 'Kemenkeu Mengajar & Edukasi Publik',
+        description:
+          'Kontribusi sebagai relawan pengajar dan narasumber kegiatan edukasi publik Kementerian Keuangan untuk membangun kesadaran pajak sejak dini.',
+        icon: 'tabler:user-check',
+      },
+      {
+        title: 'Kantor Layanan Resmi (DJP)',
+        description:
+          'KPP Madya Dua Jakarta Barat / Kantor Wilayah DJP (Kementerian Keuangan Republik Indonesia).',
+        icon: 'tabler:building-government',
+        callToAction: {
+          text: 'Portal Resmi Pajak',
+          href: 'https://www.pajak.go.id',
+        },
       },
     ]}
   />
