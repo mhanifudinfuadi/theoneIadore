@@ -9,7 +9,7 @@ export interface Props {
 }
 
 const {
-  badge = 'NEW',
+  badge = 'IRL',
   text = 'IDA ROSNIDA LAILA',
   href,
   instagram = true,
@@ -17,11 +17,11 @@ const {
 ---
 
 <div
-  class="text-sm bg-pink-200 text-white white:bg-transparent white:border-b white:border-slate-800 white:text-slate-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
+  class="text-sm bg-pink-150 text-white white:bg-transparent white:border-b white:border-white-800 white:text-white-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
 > 
   {
     badge && (
-      <span class="bg-white/20 white:bg-pink-200 text-white white:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
+      <span class="bg-white/20 white:bg-pink-200 text-white white:text-white font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
         {badge}
       </span>
     )
@@ -29,9 +29,9 @@ const {
   {
     text &&
       (href ? (
-        <a href={href} class="text-slate-300 hover:underline white:text-slate-400 font-medium" set:html={text} />
+        <a href={href} class="text-white-300 hover:underline white:text-white-400 font-medium" set:html={text} />
       ) : (
-        <span class="text-slate-300 white:text-slate-400 font-medium" set:html={text} />
+        <span class="text-white-300 white:text-white-400 font-medium" set:html={text} />
       ))
   }
 
@@ -41,9 +41,9 @@ const {
         href="https://www.instagram.com/idar.layla/"
         target="_blank"
         rel="noopener noreferrer"
-        class="ml-2 text-pink-800 hover:text-pink-800 font-medium"
+        class="ml-2 text-pink-400 hover:text-pink-300 font-medium"
       >
-        icon: "Instagram",
+        Instagram
       </a>
     )
   }
