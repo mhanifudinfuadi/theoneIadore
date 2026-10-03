@@ -24,7 +24,14 @@ const metadata = {
     id="form"
     title="Kirimkan Pesan Anda Hari Ini"
     subtitle="Ingin mendiskusikan kemitraan Tax Center, literasi perpajakan, atau kegiatan edukasi publik? Silakan isi formulir di bawah ini."
+    action="https://api.web3forms.com/submit"
+    method="POST"
     inputs={[
+      {
+        type: 'hidden',
+        name: 'access_key',
+        value: '44633330-bc46-4059-8e06-d88dd796dc87', // Ganti dengan Access Key Web3Forms Anda
+      },
       {
         type: 'text',
         name: 'name',
@@ -48,7 +55,7 @@ const metadata = {
       label:
         'Dengan mengirimkan formulir ini, Anda menyetujui pengumpulan informasi kontak untuk keperluan korespondensi profesional dan edukasi publik.',
     }}
-    description="Pesan Anda akan ditanggapi melalui saluran korespondensi resmi atau kontak profesional."
+    description="Pesan Anda akan langsung diteruskan ke email kedinasan untuk ditindaklanjuti."
   />
 
   <!-- Features2 Widget ****************** -->
@@ -89,10 +96,12 @@ const metadata = {
       {
         title: 'Kantor Layanan Resmi (DJP)',
         description: 'KPP Madya Dua Jakarta Barat / Kantor Wilayah DJP (Kementerian Keuangan Republik Indonesia).',
-        icon: 'tabler:building-bank', // Atau bisa pakai 'tabler:building'
+        icon: 'tabler:building-bank',
         callToAction: {
           text: 'Portal Resmi Pajak',
           href: 'https://www.pajak.go.id/id/alamat-kantor/kantor-pelayanan-pajak-madya-dua-jakarta-barat',
+          target: '_blank',
+          rel: 'noopener noreferrer',
         },
       },
     ]}
