@@ -24,8 +24,7 @@ const {
 
 <WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-5xl ${classes?.container ?? ''}`} bg={bg}>
   <div class:list={['flex flex-col gap-8 md:gap-12', { 'md:flex-row-reverse': isReversed }, { 'md:flex-row': image }]}>
-    <div class:list={['md:py-4 md:self-center', { 'md:basis-[45%]': image }, { 'w-full': !image }]}>  
-      <Headline
+<div class:list={['md:py-4 md:self-start', { 'md:basis-[45%]': image }, { 'w-full': !image }]}>      <Headline
         title={title}
         subtitle={subtitle}
         tagline={tagline}
@@ -38,7 +37,7 @@ const {
       <Timeline items={items} classes={classes?.items as Record<string, never>} />
 
       <div class="mt-10">
-        <slot name="content" />
+        
       </div>
       {
         typeof callToAction === 'string' ? (
@@ -54,9 +53,9 @@ const {
         )
       }
     </div>
-    {
+{
   image && (
-    <div class="relative md:basis-[55%] flex items-center justify-center">
+    <div class="relative md:basis-[55%] self-start">
       {typeof image === 'string' ? (
         <Fragment set:html={image} />
       ) : (
@@ -72,6 +71,10 @@ const {
           alt={image?.alt || ''}
         />
       )}
+
+      <div class="mt-8">
+        <slot name="content" />
+      </div>
     </div>
   )
 }
