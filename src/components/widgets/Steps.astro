@@ -55,25 +55,25 @@ const {
       }
     </div>
     {
-      image && (
-        <div class="relative md:basis-[55%]">
-          {typeof image === 'string' ? (
-            <Fragment set:html={image} />
-          ) : (
-            <Image
-              class="inset-0 object-cover object-top w-full rounded-md shadow-lg md:absolute md:h-full bg-gray-400 dark:bg-slate-700"
-              widths={[400, 768, 2048]}
-              sizes="(max-width: 768px) 100vw, 432px"
-              width={432}
-              height={768}
-              layout="cover"
-              format="webp"
-              src={image?.src}
-              alt={image?.alt || ''}
-            />
-          )}
-        </div>
-      )
-    }
+  image && (
+    <div class="relative md:basis-[55%] flex items-center justify-center">
+      {typeof image === 'string' ? (
+        <Fragment set:html={image} />
+      ) : (
+        <Image
+          class="w-full h-auto rounded-md shadow-lg bg-gray-400 dark:bg-slate-700"
+          widths={[400, 768, 1024]}
+          sizes="(max-width: 768px) 100vw, 55vw"
+          width={1024}
+          height={1024}
+          layout="constrained"
+          format="webp"
+          src={image?.src}
+          alt={image?.alt || ''}
+        />
+      )}
+    </div>
+  )
+}
   </div>
 </WidgetWrapper>
