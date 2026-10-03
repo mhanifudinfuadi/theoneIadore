@@ -11,17 +11,17 @@ export interface Props {
 const {
   badge = 'NEW',
   text = 'IDA ROSNIDA LAILA',
-  href,
-  instagram = true,
+  icon = 'Instagram',
+  essential: true,
 } = Astro.props;
 ---
 
 <div
-  class="text-sm bg-slate-900 text-slate-300 white:bg-transparent white:border-b white:border-slate-800 white:text-slate-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
+  class="text-sm bg-pink-300 text-pink-950 white:bg-transparent white:border-b white:border-slate-800 white:text-slate-400 hidden lg:flex gap-1 overflow-hidden px-3 py-2 relative text-ellipsis whitespace-nowrap"
 >
   {
     badge && (
-      <span class="bg-white/20 white:bg-slate-700 text-slate-100 white:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
+      <span class="bg-white/20 white:bg-pink-300 text-slate-100 white:text-slate-300 font-semibold px-1 py-0.5 text-xs mr-0.5 rtl:mr-0 rtl:ml-0.5 inline-block">
         {badge}
       </span>
     )
