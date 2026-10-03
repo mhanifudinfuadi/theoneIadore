@@ -521,56 +521,68 @@ const structuredData = [
 
   <!-- FAQs Widget ******************* -->
 
-  <FAQs
+   <FAQs
     id="faqs"
-    title="Frequently Asked Questions"
-    subtitle="The questions people ask before they clone the repository, answered briefly. For step-by-step tasks, the repository ships skills your AI coding assistant can follow."
-    tagline="FAQs"
+    title="Questions Along the Journey — 歩みについて"
+    subtitle="Beberapa pertanyaan tentang perjalanan profesional, dunia literasi, dan ruang berkarya di antara keduanya."
+    tagline="A Few Questions · いくつかの問い"
     schema
     items={[
       {
-        title: 'What is AstroWind?',
+        title: 'Who is Ida Rosnida Laila?',
         description:
-          'A free, open-source template for Astro and Tailwind CSS: a static site with a header, footer, twenty-plus reusable widgets, a Markdown/MDX blog, dark mode, RTL support, image optimisation, SEO metadata and an RSS feed, ready to be customised and deployed anywhere static files are served.',
+          'Ida Rosnida Laila adalah bagian dari Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia, dengan pengalaman dalam pelayanan, komunikasi publik, hubungan kelembagaan, edukasi, dan literasi.',
       },
       {
-        title: 'What do I need to start?',
+        title: 'What connects her professional work and writing?',
         description:
-          'A current Node.js (the exact minimum is in <code>package.json</code>) and a terminal. Run <code>npm create astro@latest -- --template arthelokyo/astrowind</code>, then <code>npm run dev</code>. Site name, URL, metadata and blog options live in <code>src/config.yaml</code>; colours and fonts in <code>src/components/CustomStyles.astro</code>.',
+          'Keduanya bertemu pada satu hal: komunikasi. Dalam pekerjaan, komunikasi digunakan untuk menghubungkan institusi dengan masyarakat dan berbagai pemangku kepentingan. Dalam tulisan, kata-kata menjadi ruang untuk menyampaikan gagasan, pengalaman, dan refleksi.',
       },
       {
-        title: 'Can I use it for a site without a blog?',
+        title: 'What are her areas of interest?',
         description:
-          'Yes. Set <code>apps.blog.isEnabled: false</code> in <code>src/config.yaml</code> and the blog routes, the RSS feed and the post widgets disappear from the build. The rest of the template is unaffected.',
+          'Perpajakan, komunikasi publik, hubungan kelembagaan, edukasi, literasi, membaca, dan menulis menjadi beberapa ruang yang membentuk perjalanan profesional maupun personalnya.',
       },
       {
-        title: 'How do I change colours, fonts and the logo?',
+        title: 'What does “Bibliophagist” mean here?',
         description:
-          'Colours are CSS variables in <code>src/components/CustomStyles.astro</code> (light and dark), fonts are configured in <code>astro.config.ts</code> through Astro’s Fonts API, and the logo is <code>src/components/Logo.astro</code>. The same variables also feed the shadcn/ui-compatible tokens, so shadcn-style components pick up your theme.',
+          'Bibliophagist digunakan untuk menggambarkan kecintaan terhadap buku dan membaca. Baginya, buku menjadi ruang untuk belajar, menemukan perspektif, memahami manusia, dan berhenti sejenak dari riuhnya kehidupan.',
       },
       {
-        title: 'Does it work with an AI coding assistant?',
+        title: 'What has she written?',
         description:
-          'It is built for it. The repository includes <code>AGENTS.md</code> with the project conventions and a <code>.agents/skills/</code> folder with step-by-step guides for common tasks (disable the blog, set an Open Graph image, deploy under a base path, connect a CMS, deploy to Cloudflare…), so tools like Claude Code, Codex or Cursor can do them reliably.',
+          'Di antaranya adalah artikel “Mengintip Insentif Pajak Bantu Masyarakat” (2021) dan “Pajak, Walau Dibenci Namun Dinanti” (2023), yang diterbitkan melalui kanal Direktorat Jenderal Pajak. Ia juga berkarya dalam bentuk fiksi melalui novel Selaksa Cinta Reina dengan nama pena Aida Leyla.',
       },
       {
-        title: 'Where can I deploy it and what does it cost?',
+        title: 'What is Selaksa Cinta Reina?',
         description:
-          'Anywhere that serves static files: Vercel, Netlify, Cloudflare, GitHub Pages, an nginx container (a Dockerfile is included) or your own server. The template is MIT licensed and free for personal and commercial projects.',
+          'Selaksa Cinta Reina adalah novel karya Aida Leyla yang menyusuri perjalanan seorang perempuan yang pernah mencintai sepenuh hati, berjuang menjaga keluarga, jatuh dan bangkit kembali, hingga menemukan harapan yang sempat hilang. Sebuah kisah tentang cinta, keluarga, kehilangan, perjuangan, dan harapan — sekaligus ruang untuk berhenti sejenak dari riuhnya dunia.',
       },
     ]}
   />
 
-  <!-- Stats Widget ****************** -->
+  <!-- Journey Stats Widget ****************** -->
 
   <Stats
     id="stats"
     countUp
     stats={[
-      { title: 'GitHub stars', amount: '6K' },
-      { title: 'Forks', amount: '1.7K' },
-      { title: 'Ready-made widgets', amount: '34' },
-      { title: 'Lighthouse score', amount: '100' },
+      {
+        title: 'Published Articles',
+        amount: '2',
+      },
+      {
+        title: 'Club Literacy Participants',
+        amount: '68',
+      },
+      {
+        title: 'Participants · Writing Workshop 2020',
+        amount: '150+',
+      },
+      {
+        title: 'Tax Education Students · PPL',
+        amount: '46',
+      },
     ]}
   />
 
