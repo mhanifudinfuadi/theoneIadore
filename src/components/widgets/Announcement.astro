@@ -10,7 +10,9 @@ export interface Props {
 
 const {
   badge = 'NEW',
-  text = 'IDA ROSNIDA LAILA' »',
+  text = 'IDA ROSNIDA LAILA',
+  href,
+  instagram = true,
 } = Astro.props;
 ---
 
@@ -32,12 +34,17 @@ const {
         <span class="text-slate-300 white:text-slate-400 font-medium" set:html={text} />
       ))
   }
-  onst social: Social = [
+
   {
-    name: "Instagram",
-    icon: "Instagram",
-    link: "https://www.instagram.com/idar.layla/",
-    essential: true,
-  },
-  ];
+    instagram && (
+      <a
+        href="https://www.instagram.com/idar.layla/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="ml-2 text-pink-400 hover:text-pink-300 font-medium"
+      >
+        Instagram
+      </a>
+    )
+  }
 </div>
