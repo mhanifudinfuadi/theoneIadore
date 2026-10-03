@@ -1,128 +1,78 @@
-import { getPermalink, getBlogPermalink, getAsset } from './utils/permalinks';
+import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
     {
-      text: 'Homes',
-      links: [
-        {
-          text: 'SaaS',
-          href: getPermalink('/homes/saas'),
-        },
-        {
-          text: 'Startup',
-          href: getPermalink('/homes/startup'),
-        },
-        {
-          text: 'Mobile App',
-          href: getPermalink('/homes/mobile-app'),
-        },
-        {
-          text: 'Personal',
-          href: getPermalink('/homes/personal'),
-        },
-      ],
+      text: 'Beranda',
+      href: getPermalink('/'),
     },
     {
-      text: 'Pages',
-      links: [
-        {
-          text: 'Features (Anchor Link)',
-          href: getPermalink('/#features'),
-        },
-        {
-          text: 'Services',
-          href: getPermalink('/services'),
-        },
-        {
-          text: 'Pricing',
-          href: getPermalink('/pricing'),
-        },
-        {
-          text: 'About us',
-          href: getPermalink('/about'),
-        },
-        {
-          text: 'Contact',
-          href: getPermalink('/contact'),
-        },
-        {
-          text: 'Terms',
-          href: getPermalink('/terms'),
-        },
-        {
-          text: 'Privacy policy',
-          href: getPermalink('/privacy'),
-        },
-      ],
+      text: 'Tentang',
+      href: getPermalink('/about'),
     },
     {
-      text: 'Landing',
+      text: 'Tulisan & Opini',
       links: [
         {
-          text: 'Lead Generation',
-          href: getPermalink('/landing/lead-generation'),
-        },
-        {
-          text: 'Long-form Sales',
-          href: getPermalink('/landing/sales'),
-        },
-        {
-          text: 'Click-Through',
-          href: getPermalink('/landing/click-through'),
-        },
-        {
-          text: 'Product Details (or Services)',
-          href: getPermalink('/landing/product'),
-        },
-        {
-          text: 'Coming Soon or Pre-Launch',
-          href: getPermalink('/landing/pre-launch'),
-        },
-        {
-          text: 'Subscription',
-          href: getPermalink('/landing/subscription'),
-        },
-      ],
-    },
-    {
-      text: 'Blog',
-      links: [
-        {
-          text: 'Blog List',
+          text: 'Semua Artikel',
           href: getBlogPermalink(),
         },
         {
-          text: 'Article',
-          href: getPermalink('get-started-website-with-astro-tailwind-css', 'post'),
+          text: 'Pajak & Kebijakan',
+          href: getPermalink('pajak', 'category'),
         },
         {
-          text: 'Article (with MDX)',
-          href: getPermalink('markdown-elements-demo-post', 'post'),
+          text: 'Edukasi & Literasi',
+          href: getPermalink('edukasi', 'category'),
         },
         {
-          text: 'Category Page',
-          href: getPermalink('tutorials', 'category'),
-        },
-        {
-          text: 'Tag Page',
-          href: getPermalink('astro', 'tag'),
+          text: 'Refleksi & Catatan',
+          href: getPermalink('refleksi', 'category'),
         },
       ],
+    },
+    {
+      text: 'Jejak Publik',
+      href: getPermalink('/#jejak-publik'),
     },
   ],
 
   actions: [
     {
-      text: 'Download',
-      href: 'https://github.com/arthelokyo/astrowind',
-      target: '_blank',
+      text: 'Sapa / Kontak',
+      href: getPermalink('/contact'),
     },
   ],
 };
 
 export const footerData = {
-  links: [],
+  links: [
+    {
+      title: 'Navigasi',
+      links: [
+        { text: 'Beranda', href: getPermalink('/') },
+        { text: 'Tentang', href: getPermalink('/about') },
+        { text: 'Artikel & Opini', href: getBlogPermalink() },
+        { text: 'Kontak', href: getPermalink('/contact') },
+      ],
+    },
+    {
+      title: 'Kategori',
+      links: [
+        { text: 'Pajak & Kebijakan', href: getPermalink('pajak', 'category') },
+        { text: 'Edukasi & Literasi', href: getPermalink('edukasi', 'category') },
+        { text: 'Refleksi & Catatan', href: getPermalink('refleksi', 'category') },
+      ],
+    },
+    {
+      title: 'Jejak Publik',
+      links: [
+        { text: 'Tax Center & Kampus', href: getPermalink('tax-center', 'tag') },
+        { text: 'Podcast & Media', href: getPermalink('media', 'tag') },
+        { text: 'Kemenkeu Mengajar', href: getPermalink('relawan', 'tag') },
+      ],
+    },
+  ],
 
   secondaryLinks: [],
 
