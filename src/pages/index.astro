@@ -331,39 +331,69 @@ const structuredData = [
   </Fragment>
 </Content>
 
-  <!-- Steps Widget ****************** -->
+<!-- Steps Widget ****************** -->
 
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
+<Steps
+  title="A Journey of Learning, Service & Words — 学びと歩み、そして言葉"
+  items={[
+    {
+      title: '01 · <span class="font-medium">Learning & Growing — 学びの歩み</span>',
+      description:
+        'Perjalanan dimulai dari pendidikan dan terus berkembang melalui pengalaman. Latar akademik S.H., M.E., dan M.Ids. menjadi bagian dari fondasi untuk memahami hukum, ekonomi, institusi, masyarakat, dan berbagai persoalan kehidupan.',
+      icon: 'tabler:school',
+    },
+    {
+      title: '02 · <span class="font-medium">Serving & Connecting — 人と社会をつなぐ</span>',
+      description:
+        'Dunia profesional membawanya pada perjalanan pelayanan perpajakan dan komunikasi publik. Dari ruang pelayanan hingga hubungan kelembagaan, setiap pengalaman mempertemukan manusia, pengetahuan, dan tanggung jawab untuk melayani masyarakat.',
+      icon: 'tabler:heart-handshake',
+    },
+    {
+      title: '03 · <span class="font-medium">Reading & Writing — 読書と言葉</span>',
+      description:
+        'Di luar dunia profesional, tumbuh kecintaan terhadap buku, membaca, dan menulis. Literasi menjadi ruang untuk belajar, berefleksi, memahami kehidupan, sekaligus menuangkan gagasan dan perasaan melalui kata-kata.',
+      icon: 'tabler:book-2',
+    },
+    {
+      title: '04 · <span class="font-medium">Selaksa Cinta Reina — 希望の物語</span>',
+      description:
+        'Kecintaan terhadap literasi kemudian melahirkan sebuah karya novel. Selaksa Cinta Reina mengajak pembaca menyusuri kisah seorang perempuan yang mencintai sepenuh hati, berjuang menjaga keluarga, jatuh dan bangkit kembali, hingga menemukan harapan yang sempat hilang.',
+      icon: 'tabler:book-heart',
+    },
+  ]}
+  image={{
+    src: '~/assets/images/podcast.png',
+    alt: '✍🏻 Novel Selaksa Cinta Reina karya Aida Leyla',
+  }}
+>
+  <Fragment slot="content">
+    <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-3">
+      A story of love, resilience & hope.
+    </h3>
+
+    <p class="mb-4">
+      Di setiap halamannya tersimpan pembelajaran tentang kesabaran,
+      keikhlasan, dan keyakinan bahwa pertolongan Allah selalu datang pada
+      waktu yang terbaik.
+    </p>
+
+    <p class="mb-6 italic">
+      Membaca kisah ini seolah mengajak kita menekan tombol
+      <em>pause</em> atas riuhnya dunia — lalu kembali menyadari bahwa
+      bersujud dan yakin kepada-Nya adalah sebaik-baik asa bagi jiwa.
+    </p>
+
+    <a
+      href="https://forms.gle/UQ4U5x5m1kPt83ub9"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 rounded-lg bg-rose-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-rose-700"
+    >
+      Pesan Selaksa Cinta Reina
+      <span aria-hidden="true">↗</span>
+    </a>
+  </Fragment>
+</Steps>
 
   <!-- Features2 Widget ************** -->
 
