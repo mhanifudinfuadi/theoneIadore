@@ -55,57 +55,58 @@ const aspectSize = {
     subtitle={subtitle}
     tagline={tagline}
     classes={{
-      container: 'max-w-xl sm:mx-auto lg:max-w-2xl',
-      title: 'text-4xl md:text-5xl font-bold tracking-tighter mb-4 font-heading',
-      subtitle: 'max-w-3xl mx-auto sm:text-center text-xl text-muted dark:text-slate-400',
+      container: 'max-w-xl sm:mx-auto lg:max-w-2xl text-center mb-8',
+      title: 'text-3xl md:text-4xl font-bold tracking-tight mb-4 font-heading text-slate-900 dark:text-white',
+      subtitle: 'max-w-3xl mx-auto text-lg text-slate-600 dark:text-slate-300 font-light',
+      tagline: 'text-xs uppercase tracking-widest text-blue-600 dark:text-blue-400 font-semibold mb-2',
       ...((classes?.headline as Record<string, string>) ?? {}),
     }}
   />
-  <div class="mx-auto max-w-7xl px-0 py-4 md:px-2">
+  <div class="mx-auto max-w-7xl px-0 py-2 md:px-2">
     <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
       <div class="md:basis-1/2 self-center">
-        {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+        {content && <div class="mb-8 text-base md:text-lg text-slate-700 dark:text-slate-300 leading-relaxed font-normal" set:html={content} />}
 
         {
           callToAction && (
-            <div class="mt-[-40px] mb-8 text-primary dark:text-blue-300">
-              <Button variant="link" {...callToAction} />
+            <div class="mb-8 text-primary dark:text-blue-400">
+              <Button variant="link" classes={{ label: 'text-base font-medium underline underline-offset-4 decoration-blue-500 hover:text-blue-600' }} {...callToAction} />
             </div>
           )
         }
 
         {
           items.length > 0 && (
-            <div class:list={['grid mx-auto gap-y-4 md:gap-y-8 gap-8', columnsClass]}>
+            <div class:list={['grid mx-auto gap-y-6 md:gap-y-8 gap-8', columnsClass]}>
               {items.map(({ title: itemTitle, description, icon, callToAction }) => (
                 <div class="intersect-once motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
-                  <div class="flex flex-row max-w-none">
-                    <div class="flex justify-center">
+                  <div class="flex flex-row max-w-none items-start">
+                    <div class="flex shrink-0 justify-center">
                       <Icon
                         name={icon || 'tabler:check'}
-                        class="flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1 mr-2 rtl:mr-0 rtl:ml-2"
+                        class="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 p-1.5 border border-blue-100 dark:border-slate-700 shadow-sm mr-3 rtl:mr-0 rtl:ml-3"
                       />
                     </div>
                     <div class="mt-0.5">
                       {itemTitle && (
-                        <h3 class="text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2">
+                        <h3 class="text-base font-semibold leading-6 text-slate-900 dark:text-white">
                           {itemTitle}
                         </h3>
                       )}
                       {description && (
                         <p
-                          class:list={[{ 'mt-3': itemTitle }, 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2']}
+                          class:list={[{ 'mt-1.5': itemTitle }, 'text-sm text-slate-600 dark:text-slate-400 leading-relaxed']}
                           set:html={description}
                         />
                       )}
                       {callToAction && (
                         <div
                           class:list={[
-                            { 'mt-3': itemTitle || description },
-                            'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+                            { 'mt-2': itemTitle || description },
+                            'text-sm font-medium leading-6 dark:text-white',
                           ]}
                         >
-                          <Button variant="link" {...callToAction} />
+                          <Button variant="link" classes={{ label: 'text-sm underline underline-offset-4' }} {...callToAction} />
                         </div>
                       )}
                     </div>
@@ -116,7 +117,7 @@ const aspectSize = {
           )
         }
       </div>
-      <div class="mt-10 md:mt-0 md:basis-1/2">
+      <div class="mt-10 md:mt-0 md:basis-1/2 self-center">
         {
           image && (
             <div class="relative m-auto max-w-4xl">
@@ -124,7 +125,7 @@ const aspectSize = {
                 <Fragment set:html={image} />
               ) : (
                 <Image
-                  class:list={['mx-auto w-full rounded-lg bg-gray-500 shadow-lg', aspectClass]}
+                  class:list={['mx-auto w-full rounded-xl bg-slate-100 dark:bg-slate-800 shadow-md border border-slate-200/50 dark:border-slate-800', aspectClass]}
                   width={aspectSize.width}
                   height={aspectSize.height}
                   widths={[400, 640, 960]}
