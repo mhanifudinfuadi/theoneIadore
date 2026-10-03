@@ -586,25 +586,26 @@ const structuredData = [
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+ <!-- CallToAction Widget *********** -->
 
-  <CallToAction
-    actions={[
-      {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
-      },
-    ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+<CallToAction
+  actions={[
+    {
+      variant: 'primary',
+      text: 'Discover the Writing',
+      href: '#writing',
+      icon: 'tabler:arrow-up-right',
+    },
+  ]}
+>
+  <Fragment slot="title">
+    A Space for Words&nbsp;—&nbsp;<br class="block sm:hidden" />
+    <span class="sm:whitespace-nowrap">言葉の余白</span>
+  </Fragment>
 
-    <Fragment slot="subtitle">
-      Free, open source and production-ready. <br class="hidden md:inline" />Clone it, replace the content and deploy.
-    </Fragment>
-  </CallToAction>
+  <Fragment slot="subtitle">
+    Di antara kesibukan, selalu ada ruang untuk membaca, menulis, dan memberi makna
+    pada hal-hal yang sederhana.
+  </Fragment>
+</CallToAction>
 </Layout>
