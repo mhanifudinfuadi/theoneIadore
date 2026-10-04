@@ -70,7 +70,7 @@ const structuredData = [
   >
     <Fragment slot="title">
      Pajak, <span class="hidden xl:inline"> Kebijakan Publik </span>,
-      <span class="text-accent dark:text-white">dan Cerita Dibalik</span> Anggaran Negara.
+      <span class="text-accent dark:text-white"> dan Cerita Dibalik</span> Anggaran Negara.
     </Fragment>
 
     <Fragment slot="subtitle">
@@ -501,24 +501,25 @@ const structuredData = [
 
   <!-- Note Widget ******************* -->
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <Note 
+    title="Nilai Utama:" 
+    description="Pelayanan, Hubungan Kelembagaan, Edukasi, & Literasi Publik" 
+  />
 
   <!-- HighlightedPosts Widget ******* -->
 
   <BlogHighlightedPosts
-    title="Find out more content in our Blog"
+    title="Catatan, Opini, & Jejak Publikasi"
     postIds={[
-      'get-started-website-with-astro-tailwind-css',
-      'how-to-customize-astrowind-to-your-brand',
-      'useful-resources-to-create-websites',
-      'landing',
+      'pajak-walau-dibenci-namun-dinanti',
+      'mengintip-insentif-pajak-bantu-masyarakat',
+      'lokakarya-penulisan-dan-literasi-mahasiswa',
+      'sinergi-tax-center-dan-kemitraan-akademis',
     ]}
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro v7 + Tailwind CSS v4.
-                        Astro is a very interesting technology. Thanks.
-                `}
+    information={`Ruang berbagi pemikiran seputar kebijakan perpajakan, komunikasi publik, literasi edukasi, hingga refleksi personal di balik rutinitas pelayanan masyarakat.`}
   />
 
+  
   <!-- FAQs Widget ******************* -->
 
    <FAQs
