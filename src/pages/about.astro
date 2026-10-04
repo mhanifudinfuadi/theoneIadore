@@ -4,14 +4,12 @@ import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
 import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
-import Team from '~/components/widgets/Team.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
-  title: 'About us',
-  description:
-    'About page demo built with AstroWind: hero, stats, feature grids and timelines ready to describe your company.',
+  title: 'Tentang / プロフィール — Ida Rosnida Laila',
+  description: 'Profil profesional, perjalanan karier di DJP, karya tulis, dan refleksi kepenulisan Ida Rosnida Laila, S.H., M.E., M.Ids.',
 };
 ---
 
@@ -19,275 +17,217 @@ const metadata = {
   <!-- Hero Widget ******************* -->
 
   <Hero
-    tagline="About us"
+    tagline="ABOUT / プロフィール"
     image={{
-      src: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Caos Image',
+      src: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Ida Rosnida Laila Profile Workspace',
     }}
   >
     <Fragment slot="title">
-      Elevate your online presence with our <br />
-      <span class="text-accent dark:text-white"> Beautiful Website Templates</span>
+      Pajak, Kebijakan, dan <br />
+      <span class="text-accent dark:text-blue-400">Cerita di Balik Angka</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Donec efficitur, ipsum quis congue luctus, mauris magna convallis mauris, eu auctor nisi lectus non augue. Donec
-      quis lorem non massa vulputate efficitur ac at turpis. Sed tincidunt ex a nunc convallis, et lobortis nisi tempus.
-      Suspendisse vitae nisi eget tortor luctus maximus sed non lectus.
+      Ida Rosnida Laila, S.H., M.E., M.Ids. adalah profesional perpajakan dan komunikator sektor publik di Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia. Perjalanan kariernya membentang dari pelayanan wajib pajak, komunikasi publik, hubungan kelembagaan, hingga edukasi dan literasi perpajakan di tingkat regional.
     </Fragment>
   </Hero>
 
   <!-- Stats Widget ****************** -->
 
   <Stats
-    title="Statistics about us"
+    title="Jejak & Dedikasi Publik"
     stats={[
-      { title: 'Offices', amount: '4' },
-      { title: 'Employees', amount: '248' },
-      { title: 'Templates', amount: '12' },
-      { title: 'Awards', amount: '24' },
+      { title: 'Mulai Kedinasan (DJP)', amount: '2002' },
+      { title: 'Gelar Akademik Terverifikasi', amount: 'S2 / S3' },
+      { title: 'Gelar Wicara & Podcast', amount: 'Kata.lo.gue' },
+      { title: 'Komunitas & Pengajaran', amount: 'KM 10' },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
+  <!-- Features3 Widget (Pilar Utama) ************** -->
 
   <Features3
-    title="Our templates"
-    subtitle="Etiam scelerisque, enim eget vestibulum luctus, nibh mauris blandit nulla, nec vestibulum risus justo ut enim. Praesent lacinia diam et ante imperdiet euismod."
+    title="Pilar Profesional & Personal"
+    subtitle="Enam dimensi utama yang membentuk perspektif kerja, kepenulisan, dan kontribusi publik:"
     columns={3}
     isBeforeContent={true}
     items={[
       {
-        title: 'Educational',
+        title: 'TAX / Administrasi Pajak',
         description:
-          'Morbi faucibus luctus quam, sit amet aliquet felis tempor id. Cras augue massa, ornare quis dignissim a, molestie vel nulla.',
-        icon: 'tabler:template',
+          'Pengalaman mendalam dalam pelayanan wajib pajak, kepatuhan, serta administrasi perpajakan yang berkeadilan dan responsif.',
+        icon: 'tabler:receipt-tax',
       },
       {
-        title: 'Interior Design',
+        title: 'CONNECT / Hubungan Kelembagaan',
         description:
-          'Vivamus porttitor, tortor convallis aliquam pretium, turpis enim consectetur elit, vitae egestas purus erat ac nunc nulla.',
-        icon: 'tabler:template',
+          'Menghubungkan otoritas pajak dengan media, instansi pemerintah (BPK/Pemda), serta ekosistem publik untuk transparansi informasi.',
+        icon: 'tabler:building-community',
       },
       {
-        title: 'Photography',
+        title: 'EDUCATE / Edukasi & Tax Center',
         description:
-          'Duis sed lectus in nisl vehicula porttitor eget quis odio. Aliquam erat volutpat. Nulla eleifend nulla id sem fermentum.',
-        icon: 'tabler:template',
+          'Pengembangan Tax Center di perguruan tinggi, pembimbingan relawan pajak, dan literasi bagi generasi muda.',
+        icon: 'tabler:school',
       },
     ]}
   />
 
-  <!-- Features3 Widget ************** -->
+  <!-- Features3 Widget (Pilar Lanjutan) ************** -->
 
   <Features3
     columns={3}
     isAfterContent={true}
     items={[
       {
-        title: 'E-commerce',
+        title: 'WRITE / Opini & Editing',
         description:
-          'Rutrum non odio at vehicula. Proin ipsum justo, dignissim in vehicula sit amet, dignissim id quam. Sed ac tincidunt sapien.',
-        icon: 'tabler:template',
+          'Menulis artikel publikasi resmi, menyunting pemberitaan institusi, serta memoderasi lokakarya penulisan opini.',
+        icon: 'tabler:pencil',
       },
       {
-        title: 'Blog',
+        title: 'REFLECT / Refleksi Kebijakan',
         description:
-          'Nullam efficitur volutpat sem sed fringilla. Suspendisse et enim eu orci volutpat laoreet ac vitae libero.',
-        icon: 'tabler:template',
+          'Menghubungkan pengalaman kerja dan isu kebijakan publik dengan analogi sederhana yang dekat dengan kehidupan masyarakat.',
+        icon: 'tabler:bulb',
       },
       {
-        title: 'Business',
+        title: 'MOVE / Running & Stamina',
         description:
-          'Morbi et elit finibus, facilisis justo ut, pharetra ipsum. Donec efficitur, ipsum quis congue luctus, mauris magna.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Branding',
-        description:
-          'Suspendisse vitae nisi eget tortor luctus maximus sed non lectus. Cras malesuada pretium placerat. Nullam venenatis dolor a ante rhoncus.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Medical',
-        description:
-          'Vestibulum malesuada lacus id nibh posuere feugiat. Nam volutpat nulla a felis ultrices, id suscipit mauris congue. In hac habitasse platea dictumst.',
-        icon: 'tabler:template',
-      },
-      {
-        title: 'Fashion Design',
-        description:
-          'Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus.',
-        icon: 'tabler:template',
+          'Rutinitas berlari 5 km sebelum bekerja sebagai fondasi menjaga stamina, fokus, dan keseimbangan hidup.',
+        icon: 'tabler:run',
       },
     ]}
     image={{
-      src: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
+      alt: 'Writing and Reflection',
     }}
   />
 
-  <!-- Steps2 Widget ****************** -->
+  <!-- Steps2 Widget (Prinsip Kerja & Nilai) ****************** -->
 
   <Steps2
-    title="Our values"
-    subtitle="Maecenas eu tellus eget est scelerisque lacinia et a diam. Aliquam velit lorem, vehicula id fermentum et, rhoncus et purus. Nulla facilisi. Vestibulum malesuada lacus."
+    title="Prinsip & Nilai Pelayanan"
+    subtitle="Nilai-nilai fundamental yang melandasi setiap langkah pelayanan publik dan hubungan masyarakat:"
     items={[
       {
-        title: 'Customer-centric approach',
+        title: 'Integritas & Akuntabilitas Sektor Publik',
         description:
-          'Donec id nibh neque. Quisque et fermentum tortor. Fusce vitae dolor a mauris dignissim commodo. Ut eleifend luctus condimentum.',
+          'Menjaga amanah tata kelola keuangan negara dengan keterbukaan, kepatuhan pada aturan, dan penyampaian informasi yang akurat.',
       },
       {
-        title: 'Constant Improvement',
+        title: 'Komunikasi Publik yang Inklusif & Empatis',
         description:
-          'Phasellus laoreet fermentum venenatis. Vivamus dapibus pulvinar arcu eget mattis. Fusce eget mauris leo.',
+          'Menyampaikan kebijakan perpajakan yang rumit menjadi narasi yang mudah dipahami dan relevan bagi seluruh lapisan masyarakat.',
       },
       {
-        title: 'Ethical Practices',
+        title: 'Sinergi & Kolaborasi Kelembagaan',
         description:
-          'Vestibulum imperdiet libero et lectus molestie, et maximus augue porta. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+          'Membangun hubungan yang harmonis dan produktif dengan akademisi, media massa, serta institusi pemerintah daerah.',
       },
     ]}
   />
 
-  <!-- Timeline Widget **************** -->
+  <!-- Timeline Widget (Karier & Penugasan Terverifikasi) **************** -->
 
   <Timeline
     id="history"
-    tagline="Our story"
-    title="Achievements"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla, sed porttitor est nibh at nulla."
+    tagline="JOURNEY / Perjalanan Terverifikasi"
+    title="Rekam Karier & Akademik"
+    subtitle="Jejak penugasan struktural, rekam akademik, dan aktivitas publik yang tercatat secara terbuka:"
     layout="alternate"
     items={[
       {
+        date: '2002',
+        title: 'Awal Masa Kedinasan DJP',
+        description: 'Memulai pengabdian di Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia.',
+        icon: 'tabler:briefcase',
+      },
+      {
+        date: '2010–2011',
+        title: 'Studi S2 & Riset Akademik (Unpad)',
+        description:
+          'Penelitian tesis kepatuhan wajib pajak: "Enhancing taxpayer compliance in Indonesia: A Case study of account representatives di Tasikmalaya" di Universitas Padjadjaran.',
+        icon: 'tabler:certificate',
+      },
+      {
         date: '2019',
-        title: 'The first template',
-        description: 'Nam malesuada urna in enim imperdiet tincidunt. Phasellus non tincidunt nisi, at elementum mi.',
-        icon: 'tabler:rocket',
-      },
-      {
-        date: '2021',
-        title: 'Global reach',
+        title: 'Kasi Kerja Sama & Humas (DJP Banten)',
         description:
-          'Cras semper nulla leo, eget laoreet erat cursus sed. Praesent faucibus massa in purus iaculis dictum.',
-        icon: 'tabler:globe',
+          'Berdasarkan KEP-581/PJ/2019, dimutasi dari Kepala Seksi Pelayanan KPP Pratama Banda Aceh menjadi Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten.',
+        icon: 'tabler:news',
       },
       {
-        date: '2023',
-        title: 'Positive customer feedback and reviews',
+        date: '2022–2024',
+        title: 'Lighthouse Team, Siniar & Literasi',
         description:
-          'Phasellus lacinia cursus velit, eu malesuada magna pretium eu. Etiam aliquet tellus purus, blandit lobortis ex rhoncus vitae.',
-        icon: 'tabler:message-star',
+          'Anggota Lighthouse Team Kanwil DJP Banten (KMK 112/2022), moderator podcast "Kata.lo.gue", serta penggerak Club Literacy & Tax Center kampus.',
+        icon: 'tabler:microphone',
       },
       {
-        date: '2026',
-        title: 'Awards and recognition as industry experts',
-        description: 'Donec nec justo eget felis facilisis fermentum. Aliquam porttitor mauris sit amet orci.',
-        icon: 'tabler:award',
+        date: '2025–2026',
+        title: 'Kemenkeu Mengajar 10 & Dedikasi Berkelanjutan',
+        description:
+          'Terlibat sebagai Relawan Pengajar Kemenkeu Mengajar 10 serta aktif menulis opini dan catatan refleksi publik.',
+        icon: 'tabler:heart-handshake',
         highlight: true,
       },
     ]}
   />
 
-  <!-- Team Widget ******************** -->
-
-  <Team
-    id="team"
-    tagline="The people"
-    title="Meet the team"
-    subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla."
-    members={[
-      {
-        name: 'Alicia Rivera',
-        role: 'Founder & CEO',
-        image: {
-          src: 'https://images.unsplash.com/photo-1618835962148-cf177563c6c0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=930&q=80',
-          alt: 'Alicia Rivera',
-        },
-        bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-        socials: [
-          { icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/', ariaLabel: 'LinkedIn' },
-          { icon: 'tabler:brand-x', href: 'https://x.com/', ariaLabel: 'X' },
-        ],
-      },
-      {
-        name: 'Daniel Okafor',
-        role: 'Lead developer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-          alt: 'Daniel Okafor',
-        },
-        bio: 'Morbi sagittis, quam nec venenatis lobortis, mi risus tempus nulla.',
-        socials: [{ icon: 'tabler:brand-github', href: 'https://github.com/', ariaLabel: 'GitHub' }],
-      },
-      {
-        name: 'Mei Tanaka',
-        role: 'Product designer',
-        image: {
-          src: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-          alt: 'Mei Tanaka',
-        },
-        bio: 'Sed porttitor est nibh at nulla. Cras semper nulla leo, eget laoreet erat.',
-        socials: [{ icon: 'tabler:brand-dribbble', href: 'https://dribbble.com/', ariaLabel: 'Dribbble' }],
-      },
-      {
-        name: 'Jonas Weber',
-        role: 'Customer success',
-        image: {
-          src: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80',
-          alt: 'Jonas Weber',
-        },
-        bio: 'Praesent faucibus massa in purus iaculis dictum.',
-        socials: [{ icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/', ariaLabel: 'LinkedIn' }],
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget (Area Keberadaan & Jejaring) ************** -->
 
   <Features2
-    title="Our locations"
-    tagline="Find us"
-    columns={4}
+    title="Fokus Wilayah & Jejaring Kebijakan"
+    tagline="LOCATIONS & NETWORK"
+    columns={3}
     items={[
       {
-        title: 'EE.UU',
-        description: '1234 Lorem Ipsum St, 12345, Miami',
+        title: 'Kanwil DJP Banten',
+        description: 'Pusat penugasan hubungan masyarakat, media visit, dan kemitraan Tax Center perguruan tinggi se-Banten.',
+        icon: 'tabler:map-pin',
       },
       {
-        title: 'Spain',
-        description: '5678 Lorem Ipsum St, 56789, Madrid',
+        title: 'Kemenkeu Mengajar & Kampus',
+        description: 'Jejak pengabdian edukasi di lingkungan universitas (UIN, Matana, UNIS) dan program sekolah Kemenkeu Mengajar.',
+        icon: 'tabler:school',
       },
       {
-        title: 'Australia',
-        description: '9012 Lorem Ipsum St, 90123, Sydney',
-      },
-      {
-        title: 'Brazil',
-        description: '3456 Lorem Ipsum St, 34567, São Paulo',
+        title: 'Media & Publik Digital',
+        description: 'Kolaborasi dengan RRI Banten, insan pers daerah, serta saluran komunikasi digital resmi institusi.',
+        icon: 'tabler:device-tv',
       },
     ]}
   />
 
-  <!-- Features2 Widget ************** -->
+  <!-- Features2 Widget (Sapa & Kontak Ringkas) ************** -->
 
   <Features2
-    title="Technical Support"
-    tagline="Contact us"
+    title="Mari Terhubung"
+    tagline="CONTACT / つながる"
     columns={2}
     items={[
       {
-        title: 'Chat with us',
+        title: 'Diskusi & Kirim Pesan',
         description:
-          'Integer luctus laoreet libero, auctor varius purus rutrum sit amet. Ut nec molestie nisi, quis eleifend mi.',
+          'Terbuka untuk ruang diskusi seputar literasi perpajakan, penulisan opini, maupun penguatan Tax Center.',
         icon: 'tabler:messages',
+        callToAction: {
+          text: 'Ke Halaman Kontak',
+          href: '/contact',
+        },
       },
       {
-        title: 'Call us',
+        title: 'Jejak Sosial Media',
         description:
-          'Mauris faucibus finibus orci, in posuere elit viverra non. In hac habitasse platea dictumst. Cras lobortis metus a hendrerit congue.',
-        icon: 'tabler:headset',
+          'Ikuti catatan harian, aktivitas berlari, dan dokumentasi kegiatan publik melalui akun Instagram resmi.',
+        icon: 'tabler:brand-instagram',
+        callToAction: {
+          text: '@idar.layla',
+          href: 'https://www.instagram.com/idar.layla/',
+          target: '_blank',
+        },
       },
     ]}
   />
