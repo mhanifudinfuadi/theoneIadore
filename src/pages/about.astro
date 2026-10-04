@@ -17,13 +17,14 @@ const metadata = {
 
   <!-- =========================================================
        HERO / PROFILE
+       Pajak, Kebijakan, dan Cerita di Balik Angka
   ========================================================== -->
 
   <Hero
     tagline="ABOUT / プロフィール"
     image={{
-      src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=85',
-      alt: 'Dokumen keuangan, data, dan analisis kebijakan',
+      src: 'assets\images\tentang-1.png',
+      alt: 'Perempuan profesional dengan MacBook, dokumen perpajakan, analisis kebijakan, dan nuansa Jepang',
     }}
   >
     <Fragment slot="title">
@@ -48,32 +49,36 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+    class="mx-auto max-w-6xl px-5 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
   >
 
-    <div class="mb-9 text-center">
+    <div class="mb-6 text-center sm:mb-7">
       <h2
-        class="font-heading text-lg font-semibold tracking-[-0.025em] text-slate-900 dark:text-slate-100 sm:text-xl md:text-2xl"
+        class="font-heading text-lg font-semibold tracking-[-0.025em]
+        text-slate-900 dark:text-slate-100
+        sm:text-xl md:text-2xl"
       >
         Jejak & Dedikasi Publik
       </h2>
     </div>
 
     <div
-      class="grid grid-cols-2 text-center md:grid-cols-4
+      class="grid grid-cols-2 text-center
+      md:grid-cols-4
       md:divide-x md:divide-slate-200
       dark:md:divide-slate-800"
     >
 
       <!-- ITEM 1 -->
       <div
-        class="px-4 py-5
+        class="px-4 py-4
         border-b border-slate-200
         md:border-b-0
         dark:border-slate-800"
       >
         <div
-          class="text-[18px] font-semibold leading-tight tracking-[-0.025em]
+          class="text-[18px] font-semibold leading-tight
+          tracking-[-0.025em]
           text-blue-600 dark:text-blue-400
           sm:text-[20px] md:text-[21px]"
         >
@@ -81,7 +86,7 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-2 max-w-[140px]
+          class="mx-auto mt-1.5 max-w-[140px]
           text-[9px] font-normal uppercase
           leading-[1.5] tracking-[0.09em]
           text-slate-500 dark:text-slate-400
@@ -94,7 +99,7 @@ const metadata = {
 
       <!-- ITEM 2 -->
       <div
-        class="px-4 py-5
+        class="px-4 py-4
         border-b border-slate-200
         md:border-b-0
         dark:border-slate-800"
@@ -110,7 +115,7 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-2 max-w-[145px]
+          class="mx-auto mt-1.5 max-w-[145px]
           text-[9px] font-normal uppercase
           leading-[1.5] tracking-[0.09em]
           text-slate-500 dark:text-slate-400
@@ -123,7 +128,7 @@ const metadata = {
 
       <!-- ITEM 3 -->
       <div
-        class="px-4 py-5"
+        class="px-4 py-4"
       >
         <div
           class="mx-auto max-w-[140px]
@@ -136,7 +141,7 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-2 max-w-[145px]
+          class="mx-auto mt-1.5 max-w-[145px]
           text-[9px] font-normal uppercase
           leading-[1.5] tracking-[0.09em]
           text-slate-500 dark:text-slate-400
@@ -149,7 +154,7 @@ const metadata = {
 
       <!-- ITEM 4 -->
       <div
-        class="px-4 py-5"
+        class="px-4 py-4"
       >
         <div
           class="mx-auto max-w-[145px]
@@ -162,7 +167,7 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-2 max-w-[145px]
+          class="mx-auto mt-1.5 max-w-[145px]
           text-[9px] font-normal uppercase
           leading-[1.5] tracking-[0.09em]
           text-slate-500 dark:text-slate-400
@@ -178,9 +183,12 @@ const metadata = {
 
   <!-- =========================================================
        PROFESSIONAL & PERSONAL PILLARS
+       3 PILAR PERTAMA
   ========================================================== -->
 
-  <section class="py-4 sm:py-8">
+  <section
+    class="mt-0 py-2 sm:py-3"
+  >
 
     <Features3
       title="Pilar Profesional & Personal"
@@ -213,14 +221,48 @@ const metadata = {
 
 
   <!-- =========================================================
-       WRITING / REFLECTION / MOVEMENT
+       SECOND VISUAL
+       Gambar perempuan + MacBook + nuansa Jepang
   ========================================================== -->
 
-  <section class="py-4 sm:py-8">
+  <section
+    class="mx-auto max-w-6xl px-5 py-2 sm:px-6 sm:py-3 lg:px-8"
+  >
+
+    <div
+      class="relative overflow-hidden rounded-2xl
+      border border-slate-100
+      bg-white shadow-sm
+      dark:border-slate-800
+      dark:bg-slate-900"
+    >
+
+      <img
+        src="'assets\images\tentang-1.png',"
+        alt="Perempuan profesional dengan MacBook dalam suasana Jepang yang menggambarkan dimensi profesional dan personal"
+        class="block h-[250px] w-full object-cover object-center
+        sm:h-[300px]
+        md:h-[350px]
+        lg:h-[380px]"
+        loading="lazy"
+      />
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       WRITING / REFLECTION / MOVEMENT
+       3 PILAR BERIKUTNYA
+  ========================================================== -->
+
+  <section
+    class="mt-0 py-2 sm:py-3"
+  >
 
     <Features3
       columns={3}
-      isAfterContent={true}
       items={[
         {
           title: 'WRITE / Opini & Editing',
@@ -241,10 +283,6 @@ const metadata = {
           icon: 'tabler:run',
         },
       ]}
-      image={{
-        src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=85',
-        alt: 'Dokumen, catatan, dan aktivitas penulisan profesional',
-      }}
     />
 
   </section>
@@ -254,7 +292,9 @@ const metadata = {
        PRINCIPLES & VALUES
   ========================================================== -->
 
-  <section class="py-6 sm:py-10">
+  <section
+    class="py-5 sm:py-7"
+  >
 
     <Steps2
       title="Prinsip & Nilai Pelayanan"
@@ -285,7 +325,9 @@ const metadata = {
        CAREER TIMELINE
   ========================================================== -->
 
-  <section class="py-6 sm:py-10">
+  <section
+    class="py-5 sm:py-7"
+  >
 
     <Timeline
       id="history"
@@ -340,7 +382,9 @@ const metadata = {
        NETWORK / PUBLIC POLICY
   ========================================================== -->
 
-  <section class="py-6 sm:py-10">
+  <section
+    class="py-5 sm:py-7"
+  >
 
     <Features2
       title="Fokus Wilayah & Jejaring Kebijakan"
@@ -375,7 +419,9 @@ const metadata = {
        CONTACT
   ========================================================== -->
 
-  <section class="pb-8 pt-6 sm:pb-12 sm:pt-10">
+  <section
+    class="pb-8 pt-5 sm:pb-12 sm:pt-7"
+  >
 
     <Features2
       title="Mari Terhubung"
