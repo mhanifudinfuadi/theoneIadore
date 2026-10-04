@@ -7,20 +7,8 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
-/*
- * =========================================================
- * IMAGE ASSETS
- * =========================================================
- *
- * Lokasi:
- *
- * src/assets/images/tentang-1.png
- * src/assets/images/tentang-2.png
- */
-
 import tentangImage1 from '~/assets/images/tentang-1.png';
 import tentangImage2 from '~/assets/images/tentang-2.png';
-
 
 const metadata = {
   title: 'Tentang / プロフィール — Ida Rosnida Laila',
@@ -33,7 +21,7 @@ const metadata = {
 
   <!-- =========================================================
        HERO / PROFILE
-       Pajak, Kebijakan, dan Cerita di Balik Angka
+       PAJAK, KEBIJAKAN, DAN CERITA DI BALIK ANGKA
   ========================================================== -->
 
   <section
@@ -42,18 +30,14 @@ const metadata = {
     lg:px-8 lg:pt-7 lg:pb-5"
   >
 
-    <!--
-      Container teks dan gambar sengaja dibuat sama lebarnya.
-      Ini membuat cover mengikuti lebar judul/deskripsi,
-      bukan memenuhi seluruh lebar halaman.
-    -->
     <div class="mx-auto w-full max-w-[560px]">
 
       <!-- TAGLINE -->
       <div class="text-center">
         <div
           class="mb-1 text-[9px] font-semibold uppercase
-          tracking-[0.08em] text-blue-600
+          tracking-[0.08em]
+          text-blue-600
           dark:text-blue-400
           sm:text-[10px]"
         >
@@ -66,7 +50,10 @@ const metadata = {
       <div class="text-center">
 
         <h1
-          class="font-heading text-[30px] font-bold leading-[1.02]
+          class="font-heading
+          text-[30px]
+          font-bold
+          leading-[1.02]
           tracking-[-0.045em]
           text-slate-900
           dark:text-slate-100
@@ -84,7 +71,7 @@ const metadata = {
       </div>
 
 
-      <!-- SUBTITLE -->
+      <!-- DESCRIPTION -->
       <div
         class="mx-auto mt-2.5 max-w-[550px]
         text-center
@@ -105,12 +92,12 @@ const metadata = {
       </div>
 
 
-      <!--
-        COVER IMAGE
+      <!-- =====================================================
+           HERO IMAGE
 
-        Lebarnya mengikuti container teks di atas.
-        Tidak lagi menggunakan max-w-6xl.
-      -->
+           Lebar gambar mengikuti lebar teks.
+      ====================================================== -->
+
       <div
         class="mx-auto mt-7 w-full
         sm:mt-8"
@@ -119,8 +106,10 @@ const metadata = {
         <Image
           src={tentangImage1}
           alt="Perempuan profesional dengan MacBook, dokumen perpajakan, analisis kebijakan, dan nuansa Jepang"
-          class="block h-auto w-full rounded-lg
-          object-cover object-center
+          class="block h-auto w-full
+          rounded-lg
+          object-cover
+          object-center
           shadow-sm
           sm:rounded-xl"
           widths={[480, 560, 700]}
@@ -142,15 +131,21 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="mx-auto max-w-6xl px-5 py-6
-    sm:px-6 sm:py-7
-    lg:px-8 lg:py-8"
+    class="mx-auto max-w-6xl
+    px-5
+    py-6
+    sm:px-6
+    sm:py-7
+    lg:px-8
+    lg:py-8"
   >
 
     <div class="mb-5 text-center sm:mb-6">
 
       <h2
-        class="font-heading text-lg font-semibold
+        class="font-heading
+        text-lg
+        font-semibold
         tracking-[-0.025em]
         text-slate-900
         dark:text-slate-100
@@ -164,7 +159,8 @@ const metadata = {
 
 
     <div
-      class="grid grid-cols-2 text-center
+      class="grid grid-cols-2
+      text-center
       md:grid-cols-4
       md:divide-x
       md:divide-slate-200
@@ -173,14 +169,18 @@ const metadata = {
 
       <!-- ITEM 1 -->
       <div
-        class="border-b border-slate-200
-        px-4 py-4
+        class="border-b
+        border-slate-200
+        px-4
+        py-4
         md:border-b-0
         dark:border-slate-800"
       >
 
         <div
-          class="text-[18px] font-semibold leading-tight
+          class="text-[18px]
+          font-semibold
+          leading-tight
           tracking-[-0.025em]
           text-blue-600
           dark:text-blue-400
@@ -191,8 +191,10 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-1.5 max-w-[140px]
-          text-[9px] uppercase
+          class="mx-auto mt-1.5
+          max-w-[140px]
+          text-[9px]
+          uppercase
           leading-[1.5]
           tracking-[0.09em]
           text-slate-500
@@ -207,15 +209,20 @@ const metadata = {
 
       <!-- ITEM 2 -->
       <div
-        class="border-b border-slate-200
-        px-4 py-4
+        class="border-b
+        border-slate-200
+        px-4
+        py-4
         md:border-b-0
         dark:border-slate-800"
       >
 
         <div
-          class="mx-auto max-w-[140px]
-          text-[17px] font-semibold leading-[1.15]
+          class="mx-auto
+          max-w-[140px]
+          text-[17px]
+          font-semibold
+          leading-[1.15]
           tracking-[-0.025em]
           text-blue-600
           dark:text-blue-400
@@ -226,8 +233,10 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] uppercase
+          class="mx-auto mt-1.5
+          max-w-[145px]
+          text-[9px]
+          uppercase
           leading-[1.5]
           tracking-[0.09em]
           text-slate-500
@@ -244,8 +253,11 @@ const metadata = {
       <div class="px-4 py-4">
 
         <div
-          class="mx-auto max-w-[140px]
-          text-[17px] font-semibold leading-[1.15]
+          class="mx-auto
+          max-w-[140px]
+          text-[17px]
+          font-semibold
+          leading-[1.15]
           tracking-[-0.025em]
           text-blue-600
           dark:text-blue-400
@@ -256,8 +268,10 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] uppercase
+          class="mx-auto mt-1.5
+          max-w-[145px]
+          text-[9px]
+          uppercase
           leading-[1.5]
           tracking-[0.09em]
           text-slate-500
@@ -274,8 +288,11 @@ const metadata = {
       <div class="px-4 py-4">
 
         <div
-          class="mx-auto max-w-[145px]
-          text-[17px] font-semibold leading-[1.15]
+          class="mx-auto
+          max-w-[145px]
+          text-[17px]
+          font-semibold
+          leading-[1.15]
           tracking-[-0.025em]
           text-blue-600
           dark:text-blue-400
@@ -286,8 +303,10 @@ const metadata = {
         </div>
 
         <div
-          class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] uppercase
+          class="mx-auto mt-1.5
+          max-w-[145px]
+          text-[9px]
+          uppercase
           leading-[1.5]
           tracking-[0.09em]
           text-slate-500
@@ -306,7 +325,7 @@ const metadata = {
 
   <!-- =========================================================
        PROFESSIONAL & PERSONAL PILLARS
-       3 PILAR PERTAMA
+       3 PILAR ATAS
   ========================================================== -->
 
   <section
@@ -350,11 +369,9 @@ const metadata = {
 
 
   <!-- =========================================================
-       SECOND VISUAL
-       Gambar perempuan + nuansa Jepang
-       
-       JARAK DIPERKECIL
-       sekitar 50% lebih rapat
+       POSTER / SECOND IMAGE
+
+       Poster berada dekat dengan 3 pilar atas.
   ========================================================== -->
 
   <section
@@ -368,17 +385,17 @@ const metadata = {
     lg:px-8"
   >
 
-    <div
-      class="mx-auto w-full
-      max-w-6xl"
-    >
+    <div class="mx-auto w-full max-w-6xl">
 
       <Image
         src={tentangImage2}
         alt="Perempuan profesional dengan nuansa Jepang yang menggambarkan perpaduan profesional dan personal"
-        class="block h-[210px] w-full
+        class="block
+        h-[210px]
+        w-full
         rounded-xl
-        object-cover object-center
+        object-cover
+        object-center
         shadow-sm
         sm:h-[260px]
         md:h-[300px]
@@ -396,23 +413,30 @@ const metadata = {
 
 
   <!-- =========================================================
-       WRITING / REFLECTION / MOVEMENT
-       3 PILAR BERIKUTNYA
+       3 PILAR BAWAH
+       WRITE / REFLECT / MOVE
+
+       JARAK POSTER → PILAR DIBUAT LEBIH RAPAT.
+
+       Negative margin sengaja digunakan supaya posisi
+       3 pilar bawah naik mendekati poster.
   ========================================================== -->
 
   <section
     class="mx-auto max-w-6xl
     px-5
-    pt-0
+    !mt-[-35px]
+    !pt-0
     pb-2
     sm:px-6
-    sm:pt-0
-    sm:pb-3
+    sm:!mt-[-45px]
+    sm:!pt-0
     lg:px-8"
   >
 
     <Features3
       columns={3}
+      isAfterContent={false}
       items={[
         {
           title: 'WRITE / Opini & Editing',
