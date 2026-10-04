@@ -20,6 +20,56 @@ type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 const { page } = Astro.props as Props;
 const currentPage = page.currentPage ?? 1;
 
+/**
+ * Semua kategori pada halaman ini menggunakan anchor (#...) agar:
+ * 1. dropdown navigation tidak menuju route category yang belum tentu tersedia,
+ * 2. kartu "Jelajahi Arsip" selalu menuju section yang benar pada halaman ini,
+ * 3. tidak muncul 404 hanya karena route category belum dibuat.
+ *
+ * Filter di bawah sengaja fleksibel terhadap beberapa bentuk frontmatter:
+ * category: "pajak"
+ * category: { name: "Pajak" }
+ * categories: ["pajak", "kebijakan"]
+ * tags: ["pajak"]
+ */
+const normalizeTaxonomyValue = (value: unknown): string[] => {
+  if (!value) return [];
+
+  if (typeof value === 'string') {
+    return value
+      .split(',')
+      .map((item) => item.trim().toLowerCase())
+      .filter(Boolean);
+  }
+
+  if (Array.isArray(value)) {
+    return value.flatMap((item) => normalizeTaxonomyValue(item));
+  }
+
+  if (typeof value === 'object') {
+    const item = value as Record<string, unknown>;
+
+    return [
+      item.slug,
+      item.name,
+      item.title,
+      item.label,
+    ].flatMap((entry) => normalizeTaxonomyValue(entry));
+  }
+
+  return [];
+};
+
+const taxonomyForPost = (post: unknown): string[] => {
+  const data = (post as { data?: Record<string, unknown> })?.data ?? {};
+
+  return [
+    ...normalizeTaxonomyValue(data.category),
+    ...normalizeTaxonomyValue(data.categories),
+    ...normalizeTaxonomyValue(data.tags),
+  ];
+};
+
 const breadcrumbs = [
   { text: 'Home', href: getPermalink('/') },
   ...(currentPage > 1
@@ -30,41 +80,105 @@ const breadcrumbs = [
     : [{ text: 'Tulisan & Opini' }]),
 ];
 
+const categoryMatchers: Record<string, string[]> = {
+  'pajak-kebijakan': [
+    'pajak',
+    'kebijakan',
+    'pajak & kebijakan',
+    'pajak-kebijakan',
+    'fiskal',
+    'apbn',
+    'umkm',
+  ],
+  'edukasi-literasi': [
+    'edukasi',
+    'literasi',
+    'edukasi & literasi',
+    'edukasi-literasi',
+    'tax center',
+    'tax-center',
+    'pendidikan',
+    'penulisan',
+  ],
+  'refleksi-catatan': [
+    'refleksi',
+    'catatan',
+    'refleksi & catatan',
+    'refleksi-catatan',
+    'personal',
+    'perjalanan',
+  ],
+  'editorial-publikasi': [
+    'editorial',
+    'publikasi',
+    'editorial & publikasi',
+    'editorial-publikasi',
+    'editing',
+    'editor',
+  ],
+  'media-komunikasi': [
+    'media',
+    'komunikasi',
+    'media & komunikasi',
+    'media-komunikasi',
+    'siniar',
+    'podcast',
+    'moderator',
+    'public relations',
+    'kehumasan',
+  ],
+};
+
+const postsForCategory = (slug: string) => {
+  const matchers = categoryMatchers[slug] ?? [];
+
+  return page.data.filter((post) => {
+    const taxonomy = taxonomyForPost(post);
+    return taxonomy.some((value) => matchers.includes(value));
+  });
+};
+
 const categories = [
   {
+    slug: 'semua-karya',
     title: 'Semua Karya',
     description: 'Seluruh tulisan, refleksi, editorial, dan karya komunikasi.',
-    href: getBlogPermalink(),
+    href: '#semua-karya',
     icon: '✦',
   },
   {
+    slug: 'pajak-kebijakan',
     title: 'Pajak & Kebijakan',
     description: 'Pajak, kebijakan fiskal, APBN, UMKM, dan isu kebijakan publik.',
-    href: '/blog/category/pajak-kebijakan/',
+    href: '#pajak-kebijakan',
     icon: '税',
   },
   {
+    slug: 'edukasi-literasi',
     title: 'Edukasi & Literasi',
     description: 'Pendidikan, literasi, Tax Center, penulisan, dan berbagi pengetahuan.',
-    href: '/blog/category/edukasi-literasi/',
+    href: '#edukasi-literasi',
     icon: '学',
   },
   {
+    slug: 'refleksi-catatan',
     title: 'Refleksi & Catatan',
     description: 'Catatan personal, perjalanan, pengalaman, dan cerita di balik angka.',
-    href: '/blog/category/refleksi-catatan/',
+    href: '#refleksi-catatan',
     icon: '記',
   },
   {
+    slug: 'editorial-publikasi',
     title: 'Editorial & Publikasi',
     description: 'Jejak penyuntingan, publikasi kelembagaan, dan karya editorial.',
-    href: '/blog/category/editorial-publikasi/',
+    href: '#editorial-publikasi',
     icon: '編',
   },
   {
+    slug: 'media-komunikasi',
     title: 'Media & Komunikasi',
     description: 'Siniar, moderator, media, gelar wicara, dan komunikasi publik.',
-    href: '/blog/category/media-komunikasi/',
+    href: '#media-komunikasi',
     icon: '伝',
   },
 ];
@@ -183,15 +297,16 @@ const metadata = {
     </div>
   </section>
 
-  <!-- ARTICLE ARCHIVE -->
-  <section class="mx-auto max-w-6xl px-6 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+  <!-- ALL WORKS -->
+  <section
+    id="semua-karya"
+    class="scroll-mt-24 mx-auto max-w-6xl px-6 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+  >
     <div
       class="mb-10 flex flex-col gap-5 border-b border-gray-200 pb-8 dark:border-gray-800 sm:flex-row sm:items-end sm:justify-between"
     >
       <div>
-        <p
-          class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400"
-        >
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">
           Arsip
         </p>
 
@@ -219,6 +334,53 @@ const metadata = {
       <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
     </div>
   </section>
+
+  <!-- CATEGORY SECTIONS -->
+  {
+    categories
+      .filter((category) => category.slug !== 'semua-karya')
+      .map((category) => {
+        const posts = postsForCategory(category.slug);
+
+        return (
+          <section
+            id={category.slug}
+            class="scroll-mt-24 border-t border-gray-200 dark:border-gray-800"
+          >
+            <div class="mx-auto max-w-6xl px-6 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+              <div class="mb-9 max-w-3xl">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">
+                  Kategori Kepenulisan
+                </p>
+
+                <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
+                  {category.title}
+                </h2>
+
+                <p class="mt-3 text-gray-600 dark:text-gray-400">
+                  {category.description}
+                </p>
+              </div>
+
+              {posts.length > 0 ? (
+                <BlogList posts={posts} />
+              ) : (
+                <div class="rounded-2xl border border-dashed border-gray-300 bg-gray-50/70 p-7 text-gray-600 dark:border-gray-700 dark:bg-gray-900/40 dark:text-gray-400">
+                  <p class="font-medium text-gray-900 dark:text-gray-200">
+                    Arsip kategori sedang dikembangkan.
+                  </p>
+                  <p class="mt-2 text-sm leading-6">
+                    Belum ada karya pada halaman ini yang memiliki metadata
+                    kategori yang cocok dengan "{category.title}". Tautan tetap
+                    aktif dan tidak menghasilkan halaman kosong atau 404.
+                  </p>
+                </div>
+              )}
+            </div>
+          </section>
+        );
+      })
+  }
 
   <!-- EDITORIAL NOTE -->
   <section class="border-t border-gray-200 dark:border-gray-800">

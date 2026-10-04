@@ -1,5 +1,7 @@
 import { getPermalink, getBlogPermalink } from './utils/permalinks';
 
+const blogSection = (section: string) => `${getBlogPermalink()}#${section}`;
+
 export const headerData = {
   links: [
     {
@@ -15,27 +17,27 @@ export const headerData = {
       links: [
         {
           text: 'Semua Karya',
-          href: getBlogPermalink(),
+          href: blogSection('semua-karya'),
         },
         {
           text: 'Pajak & Kebijakan',
-          href: getPermalink('pajak', 'category'),
+          href: blogSection('pajak-kebijakan'),
         },
         {
           text: 'Edukasi & Literasi',
-          href: getPermalink('edukasi', 'category'),
+          href: blogSection('edukasi-literasi'),
         },
         {
           text: 'Refleksi & Catatan',
-          href: getPermalink('refleksi', 'category'),
+          href: blogSection('refleksi-catatan'),
         },
         {
           text: 'Editorial & Publikasi',
-          href: getPermalink('editorial', 'category'),
+          href: blogSection('editorial-publikasi'),
         },
         {
           text: 'Media & Komunikasi',
-          href: getPermalink('media', 'category'),
+          href: blogSection('media-komunikasi'),
         },
       ],
     },
@@ -60,16 +62,18 @@ export const footerData = {
       links: [
         { text: 'Beranda', href: getPermalink('/') },
         { text: 'Tentang', href: getPermalink('/about') },
-        { text: 'Artikel & Opini', href: getBlogPermalink() },
+        { text: 'Artikel & Opini', href: blogSection('semua-karya') },
         { text: 'Kontak', href: getPermalink('/contact') },
       ],
     },
     {
       title: 'Kategori',
       links: [
-        { text: 'Pajak & Kebijakan', href: getPermalink('pajak', 'category') },
-        { text: 'Edukasi & Literasi', href: getPermalink('edukasi', 'category') },
-        { text: 'Refleksi & Catatan', href: getPermalink('refleksi', 'category') },
+        { text: 'Pajak & Kebijakan', href: blogSection('pajak-kebijakan') },
+        { text: 'Edukasi & Literasi', href: blogSection('edukasi-literasi') },
+        { text: 'Refleksi & Catatan', href: blogSection('refleksi-catatan') },
+        { text: 'Editorial & Publikasi', href: blogSection('editorial-publikasi') },
+        { text: 'Media & Komunikasi', href: blogSection('media-komunikasi') },
       ],
     },
     {

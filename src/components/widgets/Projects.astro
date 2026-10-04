@@ -7,8 +7,22 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 import { getColumnsClass } from '~/utils/utils';
 import type { Projects as Props } from '~/types';
 
-// Cards for a portfolio, a list of case studies or "our work": image, tags,
-// title, short description, an optional measurable result and a link.
+/**
+ * Projects.astro
+ *
+ * Generic card grid, upgraded for the Ida Rosnida Laila portfolio:
+ * - tetap kompatibel dengan schema Projects lama;
+ * - mendukung year, institution, role, type, icon, external links, dan source labels
+ *   bila field-field tersebut tersedia di data;
+ * - kartu tanpa href tetap non-clickable;
+ * - link eksternal dibuka dengan atribut keamanan yang sesuai;
+ * - mendukung anchor/internal link tanpa memaksa semua item menjadi halaman project;
+ * - visual hierarchy dibuat lebih cocok untuk "Jejak Publik", "Karya", "Kontribusi",
+ *   "Tax Center", "Media & Komunikasi", dan case study.
+ *
+ * Field lama yang tetap didukung:
+ * image, tags, title, description, result, href, linkText.
+ */
 
 const {
   title = await Astro.slots.render('title'),
@@ -17,7 +31,6 @@ const {
   items = [],
   columns = 3,
   callToAction,
-
   id,
   isDark = false,
   classes = {},
@@ -25,69 +38,228 @@ const {
 } = Astro.props;
 
 const columnsClass = getColumnsClass(columns, '');
+
+const normalizeHref = (href?: string) => {
+  if (!href) return undefined;
+  return href.trim();
+};
+
+const isExternalHref = (href?: string) =>
+  !!href && /^(https?:)?\/\//i.test(href);
+
+const getCardLabel = (item: any) =>
+  item.type ?? item.category ?? item.role ?? itemTitleFallback(item);
+
+const itemTitleFallback = (item: any) => item.title ?? 'Jejak publik';
+
+const hasMeta = (item: any) =>
+  Boolean(item.year || item.institution || item.role || item.type);
+
+const cardBase =
+  'group relative flex h-full flex-col overflow-hidden rounded-2xl border bg-white shadow-sm transition duration-300 dark:bg-slate-900';
+
+const cardInteractive =
+  'border-gray-200 hover:-translate-y-1 hover:border-primary/40 hover:shadow-lg dark:border-slate-700 dark:hover:border-primary/50';
+
+const cardStatic =
+  'border-gray-200 dark:border-slate-700';
+
+const mediaClass =
+  'aspect-[16/10] w-full object-cover transition duration-500 group-hover:scale-[1.035]';
+
+const renderIcon = (icon?: string) => icon ?? 'tabler:arrow-up-right';
 ---
 
-<WidgetWrapper id={id} isDark={isDark} containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`} bg={bg}>
-  <Headline title={title} subtitle={subtitle} tagline={tagline} classes={classes?.headline as Record<string, string>} />
+<WidgetWrapper
+  id={id}
+  isDark={isDark}
+  containerClass={`max-w-6xl mx-auto ${classes?.container ?? ''}`}
+  bg={bg}
+>
+  <Headline
+    title={title}
+    subtitle={subtitle}
+    tagline={tagline}
+    classes={classes?.headline as Record<string, string>}
+  />
 
   <ul class:list={['grid gap-6 md:gap-8 list-none', columnsClass]}>
     {
-      items.map(({ title: itemTitle, description, image, tags, href, result, linkText }) => {
+      items.map((item: any) => {
+        const {
+          title: itemTitle,
+          description,
+          image,
+          tags,
+          href: rawHref,
+          result,
+          linkText,
+          year,
+          institution,
+          role,
+          type,
+          category,
+          icon,
+          featured = false,
+          source,
+          sourceLabel,
+        } = item;
+
+        const href = normalizeHref(rawHref);
+        const external = isExternalHref(href);
         const Card = href ? 'a' : 'div';
+        const metaLabel = getCardLabel(item);
+
         return (
-          <li class="intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade">
+          <li
+            class:list={[
+              'intersect-once intersect-quarter motion-safe:md:opacity-0 motion-safe:md:intersect:animate-fade',
+              featured ? 'md:col-span-2' : '',
+            ]}
+          >
             <Card
               href={href}
+              aria-label={href ? `${itemTitle ?? 'Buka jejak'} — ${metaLabel}` : undefined}
+              target={external ? '_blank' : undefined}
+              rel={external ? 'noopener noreferrer' : undefined}
               class:list={[
-                'group flex h-full flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white dark:border-slate-700 dark:bg-slate-900 shadow-sm',
-                href ? 'transition hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/40' : '',
+                cardBase,
+                href ? cardInteractive : cardStatic,
               ]}
             >
               {image &&
                 (typeof image === 'string' ? (
-                  <Fragment set:html={image} />
+                  <div class="overflow-hidden" set:html={image} />
                 ) : (
-                  <div class="overflow-hidden">
+                  <div class="overflow-hidden bg-gray-100 dark:bg-slate-800">
                     <Image
-                      class="aspect-[16/10] w-full object-cover transition group-hover:scale-[1.03]"
-                      widths={[400, 640]}
-                      sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 400px"
-                      width={400}
-                      height={250}
+                      class={mediaClass}
+                      widths={[400, 640, 960]}
+                      sizes={
+                        featured
+                          ? '(max-width: 767px) 100vw, 66vw'
+                          : '(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 400px'
+                      }
+                      width={featured ? 640 : 400}
+                      height={featured ? 400 : 250}
                       layout="cover"
                       format="webp"
                       alt={itemTitle ?? ''}
+                      loading="lazy"
+                      decoding="async"
                       {...image}
                     />
                   </div>
                 ))}
+
               <div class="flex flex-1 flex-col p-6">
+                {
+                  (year || metaLabel || sourceLabel) && (
+                    <div class="mb-4 flex flex-wrap items-center gap-2 text-xs">
+                      {year && (
+                        <span class="font-semibold tracking-wide text-primary">
+                          {year}
+                        </span>
+                      )}
+
+                      {year && metaLabel && (
+                        <span
+                          class="h-1 w-1 rounded-full bg-gray-300 dark:bg-slate-600"
+                          aria-hidden="true"
+                        />
+                      )}
+
+                      {metaLabel && (
+                        <span class="font-medium uppercase tracking-[0.12em] text-muted">
+                          {metaLabel}
+                        </span>
+                      )}
+
+                      {sourceLabel && (
+                        <span class="rounded-full bg-gray-100 px-2.5 py-1 font-medium text-muted dark:bg-slate-800">
+                          {sourceLabel}
+                        </span>
+                      )}
+                    </div>
+                  )
+                }
+
                 {tags && tags.length > 0 && (
-                  <ul class="mb-3 flex flex-wrap gap-1.5 list-none">
-                    {tags.map((tag) => (
-                      <li class="rounded-full bg-gray-100 px-2.5 py-0.5 text-xs font-medium text-muted dark:bg-slate-800">
+                  <ul class="mb-4 flex flex-wrap gap-1.5 list-none" aria-label="Tags">
+                    {tags.map((tag: string) => (
+                      <li class="rounded-full bg-primary-50 px-2.5 py-1 text-xs font-medium text-primary-700 dark:bg-primary-950/40 dark:text-primary-300">
                         {tag}
                       </li>
                     ))}
                   </ul>
                 )}
-                {itemTitle && <h3 class="text-xl font-bold text-heading">{itemTitle}</h3>}
-                {description && <p class="mt-2 text-muted text-pretty" set:html={description} />}
-                {result && (
-                  <p class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary">
-                    <Icon name="tabler:trending-up" class="h-4 w-4" />
-                    {result}
-                  </p>
+
+                {itemTitle && (
+                  <h3 class="text-xl font-bold leading-tight text-heading">
+                    {itemTitle}
+                  </h3>
                 )}
-                {href && (
-                  <span class="mt-auto inline-flex items-center gap-1 pt-4 text-sm font-medium text-primary">
-                    {linkText ?? 'View project'}
-                    <Icon
-                      name="tabler:arrow-right"
-                      class="h-4 w-4 transition group-hover:translate-x-0.5 rtl:rotate-180"
+
+                {
+                  institution && (
+                    <p class="mt-2 text-sm font-medium text-gray-700 dark:text-gray-300">
+                      {institution}
+                    </p>
+                  )
+                }
+
+                {
+                  role && (
+                    <p class="mt-1 text-sm text-muted">
+                      {role}
+                    </p>
+                  )
+                }
+
+                {
+                  description && (
+                    <p
+                      class="mt-3 text-muted text-pretty leading-7"
+                      set:html={description}
                     />
-                  </span>
-                )}
+                  )
+                }
+
+                {
+                  result && (
+                    <div class="mt-5 rounded-xl border border-gray-100 bg-gray-50 px-4 py-3 dark:border-slate-700 dark:bg-slate-800/70">
+                      <p class="inline-flex items-start gap-2 text-sm font-semibold text-primary">
+                        <Icon
+                          name="tabler:trending-up"
+                          class="mt-0.5 h-4 w-4 shrink-0"
+                        />
+                        <span>{result}</span>
+                      </p>
+                    </div>
+                  )
+                }
+
+                {
+                  href && (
+                    <span class="mt-auto inline-flex items-center gap-1.5 pt-6 text-sm font-semibold text-primary">
+                      {linkText ??
+                        (external ? 'Lihat sumber' : 'Lihat selengkapnya')}
+                      <Icon
+                        name={external ? 'tabler:external-link' : renderIcon(icon)}
+                        class="h-4 w-4 transition group-hover:translate-x-0.5 rtl:rotate-180"
+                      />
+                    </span>
+                  )
+                }
+
+                {
+                  !href && source && (
+                    <span class="mt-auto inline-flex items-center gap-1.5 pt-6 text-xs text-muted">
+                      <Icon name="tabler:source-code" class="h-4 w-4" />
+                      {source}
+                    </span>
+                  )
+                }
               </div>
             </Card>
           </li>
@@ -95,6 +267,7 @@ const columnsClass = getColumnsClass(columns, '');
       })
     }
   </ul>
+
   {
     callToAction && (
       <div class="mt-8 flex justify-center md:mt-12">
