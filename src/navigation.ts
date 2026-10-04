@@ -14,7 +14,7 @@ export const headerData = {
       text: 'Tulisan & Opini',
       links: [
         {
-          text: 'Semua Artikel',
+          text: 'Semua Karya',
           href: getBlogPermalink(),
         },
         {
@@ -28,6 +28,14 @@ export const headerData = {
         {
           text: 'Refleksi & Catatan',
           href: getPermalink('refleksi', 'category'),
+        },
+        {
+          text: 'Editorial & Publikasi',
+          href: getPermalink('editorial', 'category'),
+        },
+        {
+          text: 'Media & Komunikasi',
+          href: getPermalink('media', 'category'),
         },
       ],
     },
