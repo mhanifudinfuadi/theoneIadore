@@ -3,12 +3,9 @@ import type { InferGetStaticPropsType, GetStaticPaths } from 'astro';
 
 import Layout from '~/layouts/PageLayout.astro';
 import BlogList from '~/components/blog/List.astro';
-import Headline from '~/components/blog/Headline.astro';
 import Pagination from '~/components/blog/Pagination.astro';
-import Newsletter from '~/components/widgets/Newsletter.astro';
 import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
 import { getPermalink, getBlogPermalink } from '~/utils/permalinks';
-// import PostTags from "~/components/blog/Tags.astro";
 
 import { blogListRobots, getStaticPathsBlogList } from '~/utils/blog';
 
@@ -26,17 +23,56 @@ const currentPage = page.currentPage ?? 1;
 const breadcrumbs = [
   { text: 'Home', href: getPermalink('/') },
   ...(currentPage > 1
-    ? [{ text: 'Blog', href: getBlogPermalink() }, { text: `Page ${currentPage}` }]
-    : [{ text: 'Blog' }]),
+    ? [
+        { text: 'Tulisan & Opini', href: getBlogPermalink() },
+        { text: `Halaman ${currentPage}` },
+      ]
+    : [{ text: 'Tulisan & Opini' }]),
 ];
 
-// const allCategories = await findCategories();
-// const allTags = await findTags();
+const categories = [
+  {
+    title: 'Semua Karya',
+    description: 'Seluruh tulisan, refleksi, editorial, dan karya komunikasi.',
+    href: getBlogPermalink(),
+    icon: '✦',
+  },
+  {
+    title: 'Pajak & Kebijakan',
+    description: 'Pajak, kebijakan fiskal, APBN, UMKM, dan isu kebijakan publik.',
+    href: '/blog/category/pajak-kebijakan/',
+    icon: '税',
+  },
+  {
+    title: 'Edukasi & Literasi',
+    description: 'Pendidikan, literasi, Tax Center, penulisan, dan berbagi pengetahuan.',
+    href: '/blog/category/edukasi-literasi/',
+    icon: '学',
+  },
+  {
+    title: 'Refleksi & Catatan',
+    description: 'Catatan personal, perjalanan, pengalaman, dan cerita di balik angka.',
+    href: '/blog/category/refleksi-catatan/',
+    icon: '記',
+  },
+  {
+    title: 'Editorial & Publikasi',
+    description: 'Jejak penyuntingan, publikasi kelembagaan, dan karya editorial.',
+    href: '/blog/category/editorial-publikasi/',
+    icon: '編',
+  },
+  {
+    title: 'Media & Komunikasi',
+    description: 'Siniar, moderator, media, gelar wicara, dan komunikasi publik.',
+    href: '/blog/category/media-komunikasi/',
+    icon: '伝',
+  },
+];
 
 const metadata = {
-  title: `Blog${currentPage > 1 ? ` — Page ${currentPage}` : ''}`,
+  title: `Tulisan & Opini — Ida Rosnida Laila${currentPage > 1 ? ` — Halaman ${currentPage}` : ''}`,
   description:
-    'Articles about Astro, Tailwind CSS and the AstroWind template: tutorials, customisation guides and web development notes.',
+    'Kumpulan tulisan, opini, refleksi, karya editorial, literasi, dan komunikasi publik Ida Rosnida Laila.',
   robots: {
     index: blogListRobots?.index && currentPage === 1,
     follow: blogListRobots?.follow,
@@ -52,26 +88,194 @@ const metadata = {
     {page.url.prev && <link rel="prev" href={page.url.prev} />}
     {page.url.next && <link rel="next" href={page.url.next} />}
   </Fragment>
+
   <Breadcrumbs bar items={breadcrumbs} />
-  <section class="px-6 sm:px-6 py-12 sm:py-16 lg:py-20 mx-auto max-w-4xl">
-    <Headline
-      subtitle="A statically generated blog example with news, tutorials, resources and other interesting content related to AstroWind"
-    >
-      The Blog
-    </Headline>
-    <BlogList posts={page.data} />
-    <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
-    <!--
-      <PostTags tags={allCategories} class="mb-2" title="Search by Categories:" isCategory />
-      <PostTags tags={allTags}  title="Search by Tags:" />
-    -->
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-6xl px-6 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+      <div class="max-w-4xl">
+        <div
+          class="mb-5 inline-flex items-center gap-3 rounded-full border border-pink-200 bg-pink-50/70 px-4 py-2 text-sm font-medium text-gray-700 dark:border-pink-900/40 dark:bg-pink-950/20 dark:text-gray-200"
+        >
+          <span class="text-pink-500">●</span>
+          <span>Tulisan, gagasan & jejak editorial</span>
+        </div>
+
+        <h1
+          class="text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl"
+        >
+          Cerita, Opini, dan Refleksi
+          <span class="block text-primary-600 dark:text-primary-400">
+            di Balik Kebijakan
+          </span>
+        </h1>
+
+        <p
+          class="mt-6 max-w-3xl text-lg leading-8 text-gray-600 dark:text-gray-300"
+        >
+          Kumpulan tulisan dan jejak kepenulisan Ida Rosnida Laila—
+          mulai dari pajak dan kebijakan publik, edukasi dan literasi,
+          refleksi personal, hingga karya editorial dan komunikasi publik.
+        </p>
+
+        <p
+          class="mt-4 max-w-3xl text-base leading-7 text-gray-500 dark:text-gray-400"
+        >
+          Tidak semua jejak hadir dalam bentuk artikel. Sebagian hadir sebagai
+          tulisan, penyuntingan, forum literasi, moderator, siniar, dan
+          komunikasi kelembagaan.
+        </p>
+      </div>
+    </div>
   </section>
-  <Newsletter
-    tagline="Newsletter"
-    title="New articles in your inbox"
-    subtitle="Tutorials and notes about Astro, Tailwind CSS and the template, when they are published. Nothing else."
-    button="Subscribe"
-    disclaimer="Unsubscribe with one click. This form is a template: pass an <code>action</code> to connect it to your email tool."
-    classes={{ container: 'max-w-4xl' }}
-  />
+
+  <!-- CATEGORY NAVIGATION -->
+  <section class="border-y border-gray-200 bg-gray-50/70 dark:border-gray-800 dark:bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-8 sm:px-6 lg:px-8">
+      <div class="mb-5">
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400"
+        >
+          Jelajahi arsip
+        </p>
+
+        <h2 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+          Kategori Kepenulisan
+        </h2>
+      </div>
+
+      <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          categories.map((category, index) => (
+            <a
+              href={category.href}
+              class:list={[
+                'group rounded-2xl border p-5 transition duration-200',
+                index === 0
+                  ? 'border-primary-200 bg-white shadow-sm hover:-translate-y-0.5 hover:shadow-md dark:border-primary-900/50 dark:bg-gray-900'
+                  : 'border-gray-200 bg-white/70 hover:-translate-y-0.5 hover:border-primary-200 hover:shadow-sm dark:border-gray-800 dark:bg-gray-900/60 dark:hover:border-primary-900/50',
+              ]}
+            >
+              <div class="flex items-start gap-4">
+                <div
+                  class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-50 text-lg text-primary-600 dark:bg-primary-950/40 dark:text-primary-400"
+                >
+                  {category.icon}
+                </div>
+
+                <div>
+                  <h3
+                    class="font-semibold text-gray-900 transition group-hover:text-primary-600 dark:text-white dark:group-hover:text-primary-400"
+                  >
+                    {category.title}
+                  </h3>
+
+                  <p class="mt-1 text-sm leading-6 text-gray-500 dark:text-gray-400">
+                    {category.description}
+                  </p>
+                </div>
+              </div>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE ARCHIVE -->
+  <section class="mx-auto max-w-6xl px-6 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
+    <div
+      class="mb-10 flex flex-col gap-5 border-b border-gray-200 pb-8 dark:border-gray-800 sm:flex-row sm:items-end sm:justify-between"
+    >
+      <div>
+        <p
+          class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400"
+        >
+          Arsip
+        </p>
+
+        <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">
+          Semua Karya
+        </h2>
+
+        <p class="mt-3 max-w-2xl text-gray-600 dark:text-gray-400">
+          Tulisan dan catatan yang merekam gagasan, pengalaman, serta
+          keterlibatan Ida dalam dunia pajak, kebijakan, literasi, editorial,
+          dan komunikasi publik.
+        </p>
+      </div>
+
+      <div
+        class="shrink-0 rounded-full border border-gray-200 bg-white px-4 py-2 text-sm text-gray-500 dark:border-gray-800 dark:bg-gray-900 dark:text-gray-400"
+      >
+        {currentPage > 1 ? `Halaman ${currentPage}` : 'Arsip terbaru'}
+      </div>
+    </div>
+
+    <BlogList posts={page.data} />
+
+    <div class="mt-12">
+      <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
+    </div>
+  </section>
+
+  <!-- EDITORIAL NOTE -->
+  <section class="border-t border-gray-200 dark:border-gray-800">
+    <div class="mx-auto max-w-5xl px-6 py-14 sm:px-6 lg:px-8">
+      <div
+        class="rounded-3xl border border-primary-100 bg-primary-50/50 p-7 dark:border-primary-900/40 dark:bg-primary-950/10 sm:p-9"
+      >
+        <div class="grid gap-6 md:grid-cols-[auto_1fr] md:items-start">
+          <div
+            class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-xl shadow-sm dark:bg-gray-900"
+          >
+            ✎
+          </div>
+
+          <div>
+            <p
+              class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400"
+            >
+              Catatan editorial
+            </p>
+
+            <h2 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+              Menulis bukan satu-satunya cara untuk berkontribusi.
+            </h2>
+
+            <p class="mt-4 leading-7 text-gray-600 dark:text-gray-300">
+              Arsip ini membedakan karya yang ditulis langsung dengan jejak
+              editorial, literasi, moderasi, dan komunikasi publik. Dengan
+              demikian, setiap karya dapat dilihat sesuai dengan peran dan
+              konteks keterlibatan Ida.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOSING CTA -->
+  <section class="mx-auto max-w-6xl px-6 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+    <div
+      class="rounded-3xl bg-gray-900 px-7 py-10 text-white dark:bg-gray-950 sm:px-10 sm:py-12"
+    >
+      <div class="max-w-3xl">
+        <p class="text-sm font-medium text-primary-300">
+          Pajak · Kebijakan · Cerita
+        </p>
+
+        <h2 class="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+          Ada cerita di balik setiap angka.
+        </h2>
+
+        <p class="mt-4 max-w-2xl leading-7 text-gray-300">
+          Dari kebijakan publik hingga cerita masyarakat, dari ruang kelas
+          hingga ruang redaksi—setiap tulisan menjadi bagian dari perjalanan
+          memahami, menjelaskan, dan menghubungkan.
+        </p>
+      </div>
+    </div>
+  </section>
 </Layout>
