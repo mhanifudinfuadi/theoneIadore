@@ -2,82 +2,172 @@
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
 import Hero from '~/components/widgets/Hero.astro';
-import Stats from '~/components/widgets/Stats.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
 const metadata = {
   title: 'Tentang / プロフィール — Ida Rosnida Laila',
-  description: 'Profil profesional, perjalanan karier di DJP, karya tulis, dan refleksi kepenulisan Ida Rosnida Laila, S.H., M.E., M.Ids.',
+  description:
+    'Profil profesional, perjalanan karier di DJP, karya tulis, dan refleksi kepenulisan Ida Rosnida Laila, S.H., M.E., M.Ids.',
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
+
+  <!-- =========================================================
+       HERO / PROFILE
+  ========================================================== -->
 
   <Hero
     tagline="ABOUT / プロフィール"
     image={{
-      src: 'https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Ida Rosnida Laila Profile Workspace',
+      src: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1800&q=85',
+      alt: 'Dokumen keuangan, data, dan analisis kebijakan',
     }}
   >
     <Fragment slot="title">
       Pajak, Kebijakan, dan <br />
-      <span class="text-accent dark:text-blue-400">Cerita di Balik Angka</span>
+      <span class="text-accent dark:text-blue-400">
+        Cerita di Balik Angka
+      </span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      Ida Rosnida Laila, S.H., M.E., M.Ids. adalah profesional perpajakan dan komunikator sektor publik di Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia. Perjalanan kariernya membentang dari pelayanan wajib pajak, komunikasi publik, hubungan kelembagaan, hingga edukasi dan literasi perpajakan di tingkat regional.
+      Ida Rosnida Laila, S.H., M.E., M.Ids. adalah profesional perpajakan dan
+      komunikator sektor publik di Direktorat Jenderal Pajak, Kementerian
+      Keuangan Republik Indonesia. Perjalanan kariernya membentang dari
+      pelayanan wajib pajak, komunikasi publik, hubungan kelembagaan, hingga
+      edukasi dan literasi perpajakan di tingkat regional.
     </Fragment>
   </Hero>
 
-<!-- Stats Section (Clean & Elegant) ****************** -->
 
-  <section class="px-4 py-12 mx-auto max-w-6xl lg:py-16">
-    <h2 class="text-xl md:text-2xl font-semibold text-center tracking-tight text-slate-800 dark:text-slate-100 mb-10 font-heading">
-      Jejak & Dedikasi Publik
-    </h2>
+  <!-- =========================================================
+       PUBLIC FOOTPRINT / STATS
+  ========================================================== -->
 
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-4 divide-y md:divide-y-0 md:divide-x divide-slate-200 dark:divide-slate-800 text-center">
-      
-      <!-- Item 1 -->
-      <div class="pt-4 md:pt-0 px-2">
-        <div class="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-400 tracking-normal">
+  <section
+    class="mx-auto max-w-6xl px-5 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20"
+  >
+
+    <div class="mb-9 text-center">
+      <h2
+        class="font-heading text-lg font-semibold tracking-[-0.025em] text-slate-900 dark:text-slate-100 sm:text-xl md:text-2xl"
+      >
+        Jejak & Dedikasi Publik
+      </h2>
+    </div>
+
+    <div
+      class="grid grid-cols-2 text-center md:grid-cols-4
+      md:divide-x md:divide-slate-200
+      dark:md:divide-slate-800"
+    >
+
+      <!-- ITEM 1 -->
+      <div
+        class="px-4 py-5
+        border-b border-slate-200
+        md:border-b-0
+        dark:border-slate-800"
+      >
+        <div
+          class="text-[18px] font-semibold leading-tight tracking-[-0.025em]
+          text-blue-600 dark:text-blue-400
+          sm:text-[20px] md:text-[21px]"
+        >
           2002
         </div>
-        <div class="text-[11px] sm:text-xs font-normal text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+
+        <div
+          class="mx-auto mt-2 max-w-[140px]
+          text-[9px] font-normal uppercase
+          leading-[1.5] tracking-[0.09em]
+          text-slate-500 dark:text-slate-400
+          sm:text-[10px]"
+        >
           Awal Langkah Pengabdian
         </div>
       </div>
 
-      <!-- Item 2 -->
-      <div class="pt-4 md:pt-0 px-2">
-        <div class="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-400 tracking-normal">
+
+      <!-- ITEM 2 -->
+      <div
+        class="px-4 py-5
+        border-b border-slate-200
+        md:border-b-0
+        dark:border-slate-800"
+      >
+        <div
+          class="mx-auto max-w-[140px]
+          text-[17px] font-semibold leading-[1.15]
+          tracking-[-0.025em]
+          text-blue-600 dark:text-blue-400
+          sm:text-[19px] md:text-[20px]"
+        >
           Studi & Riset
         </div>
-        <div class="text-[11px] sm:text-xs font-normal text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+
+        <div
+          class="mx-auto mt-2 max-w-[145px]
+          text-[9px] font-normal uppercase
+          leading-[1.5] tracking-[0.09em]
+          text-slate-500 dark:text-slate-400
+          sm:text-[10px]"
+        >
           Hukum, Ekonomi & Kebijakan
         </div>
       </div>
 
-      <!-- Item 3 -->
-      <div class="pt-4 md:pt-0 px-2">
-        <div class="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-400 tracking-normal">
+
+      <!-- ITEM 3 -->
+      <div
+        class="px-4 py-5"
+      >
+        <div
+          class="mx-auto max-w-[140px]
+          text-[17px] font-semibold leading-[1.15]
+          tracking-[-0.025em]
+          text-blue-600 dark:text-blue-400
+          sm:text-[19px] md:text-[20px]"
+        >
           Kata.lo.gue
         </div>
-        <div class="text-[11px] sm:text-xs font-normal text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+
+        <div
+          class="mx-auto mt-2 max-w-[145px]
+          text-[9px] font-normal uppercase
+          leading-[1.5] tracking-[0.09em]
+          text-slate-500 dark:text-slate-400
+          sm:text-[10px]"
+        >
           Siniar & Bincang Santai
         </div>
       </div>
 
-      <!-- Item 4 -->
-      <div class="pt-4 md:pt-0 px-2">
-        <div class="text-base sm:text-lg font-semibold text-blue-600 dark:text-blue-400 tracking-normal">
+
+      <!-- ITEM 4 -->
+      <div
+        class="px-4 py-5"
+      >
+        <div
+          class="mx-auto max-w-[145px]
+          text-[17px] font-semibold leading-[1.15]
+          tracking-[-0.025em]
+          text-blue-600 dark:text-blue-400
+          sm:text-[19px] md:text-[20px]"
+        >
           Kemenkeu Mengajar
         </div>
-        <div class="text-[11px] sm:text-xs font-normal text-slate-500 dark:text-slate-400 mt-1 uppercase tracking-wider">
+
+        <div
+          class="mx-auto mt-2 max-w-[145px]
+          text-[9px] font-normal uppercase
+          leading-[1.5] tracking-[0.09em]
+          text-slate-500 dark:text-slate-400
+          sm:text-[10px]"
+        >
           Ruang Berbagi & Edukasi
         </div>
       </div>
@@ -85,190 +175,237 @@ const metadata = {
     </div>
   </section>
 
-  <!-- Features3 Widget (Pilar Utama) ************** -->  
 
-  <Features3
-    title="Pilar Profesional & Personal"
-    subtitle="Enam dimensi utama yang membentuk perspektif kerja, kepenulisan, dan kontribusi publik:"
-    columns={3}
-    isBeforeContent={true}
-    items={[
-      {
-        title: 'TAX / Administrasi Pajak',
-        description:
-          'Pengalaman mendalam dalam pelayanan wajib pajak, kepatuhan, serta administrasi perpajakan yang berkeadilan dan responsif.',
-        icon: 'tabler:receipt-tax',
-      },
-      {
-        title: 'CONNECT / Hubungan Kelembagaan',
-        description:
-          'Menghubungkan otoritas pajak dengan media, instansi pemerintah (BPK/Pemda), serta ekosistem publik untuk transparansi informasi.',
-        icon: 'tabler:building-community',
-      },
-      {
-        title: 'EDUCATE / Edukasi & Tax Center',
-        description:
-          'Pengembangan Tax Center di perguruan tinggi, pembimbingan relawan pajak, dan literasi bagi generasi muda.',
-        icon: 'tabler:school',
-      },
-    ]}
-  />
+  <!-- =========================================================
+       PROFESSIONAL & PERSONAL PILLARS
+  ========================================================== -->
 
-  <!-- Features3 Widget (Pilar Lanjutan) ************** -->
+  <section class="py-4 sm:py-8">
 
-  <Features3
-    columns={3}
-    isAfterContent={true}
-    items={[
-      {
-        title: 'WRITE / Opini & Editing',
-        description:
-          'Menulis artikel publikasi resmi, menyunting pemberitaan institusi, serta memoderasi lokakarya penulisan opini.',
-        icon: 'tabler:pencil',
-      },
-      {
-        title: 'REFLECT / Refleksi Kebijakan',
-        description:
-          'Menghubungkan pengalaman kerja dan isu kebijakan publik dengan analogi sederhana yang dekat dengan kehidupan masyarakat.',
-        icon: 'tabler:bulb',
-      },
-      {
-        title: 'MOVE / Running & Stamina',
-        description:
-          'Rutinitas berlari 5 km sebelum bekerja sebagai fondasi menjaga stamina, fokus, dan keseimbangan hidup.',
-        icon: 'tabler:run',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=1740&q=80',
-      alt: 'Writing and Reflection',
-    }}
-  />
-
-  <!-- Steps2 Widget (Prinsip Kerja & Nilai) ****************** -->
-
-  <Steps2
-    title="Prinsip & Nilai Pelayanan"
-    subtitle="Nilai-nilai fundamental yang melandasi setiap langkah pelayanan publik dan hubungan masyarakat:"
-    items={[
-      {
-        title: 'Integritas & Akuntabilitas Sektor Publik',
-        description:
-          'Menjaga amanah tata kelola keuangan negara dengan keterbukaan, kepatuhan pada aturan, dan penyampaian informasi yang akurat.',
-      },
-      {
-        title: 'Komunikasi Publik yang Inklusif & Empatis',
-        description:
-          'Menyampaikan kebijakan perpajakan yang rumit menjadi narasi yang mudah dipahami dan relevan bagi seluruh lapisan masyarakat.',
-      },
-      {
-        title: 'Sinergi & Kolaborasi Kelembagaan',
-        description:
-          'Membangun hubungan yang harmonis dan produktif dengan akademisi, media massa, serta institusi pemerintah daerah.',
-      },
-    ]}
-  />
-
-  <!-- Timeline Widget (Karier & Penugasan Terverifikasi) **************** -->
-
-  <Timeline
-    id="history"
-    tagline="JOURNEY / Perjalanan Terverifikasi"
-    title="Rekam Karier & Akademik"
-    subtitle="Jejak penugasan struktural, rekam akademik, dan aktivitas publik yang tercatat secara terbuka:"
-    layout="alternate"
-    items={[
-      {
-        date: '2002',
-        title: 'Awal Masa Kedinasan DJP',
-        description: 'Memulai pengabdian di Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia.',
-        icon: 'tabler:briefcase',
-      },
-      {
-        date: '2010–2011',
-        title: 'Studi S2 & Riset Akademik (Unpad)',
-        description:
-          'Penelitian tesis kepatuhan wajib pajak: "Enhancing taxpayer compliance in Indonesia: A Case study of account representatives di Tasikmalaya" di Universitas Padjadjaran.',
-        icon: 'tabler:certificate',
-      },
-      {
-        date: '2019',
-        title: 'Kasi Kerja Sama & Humas (DJP Banten)',
-        description:
-          'Berdasarkan KEP-581/PJ/2019, dimutasi dari Kepala Seksi Pelayanan KPP Pratama Banda Aceh menjadi Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten.',
-        icon: 'tabler:news',
-      },
-      {
-        date: '2022–2024',
-        title: 'Lighthouse Team, Siniar & Literasi',
-        description:
-          'Anggota Lighthouse Team Kanwil DJP Banten (KMK 112/2022), moderator podcast "Kata.lo.gue", serta penggerak Club Literacy & Tax Center kampus.',
-        icon: 'tabler:microphone',
-      },
-      {
-        date: 'Saat ini',
-        title: 'KPP Madya Dua Jakarta Barat',
-        description:
-          'Bertugas di KPP Madya Dua Jakarta Barat, aktif sebagai Relawan Pengajar Kemenkeu Mengajar serta menulis opini publik.',
-        icon: 'tabler:building-bank',
-        highlight: true,
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget (Area Keberadaan & Jejaring) ************** -->
-
-  <Features2
-    title="Fokus Wilayah & Jejaring Kebijakan"
-    tagline="LOCATIONS & NETWORK"
-    columns={3}
-    items={[
-      {
-        title: 'Kanwil DJP Banten & Jakarta Barat',
-        description: 'Pusat penugasan hubungan masyarakat, pelayanan unit vertikal, media visit, dan kemitraan Tax Center.',
-        icon: 'tabler:map-pin',
-      },
-      {
-        title: 'Kemenkeu Mengajar & Kampus',
-        description: 'Jejak pengabdian edukasi di lingkungan universitas (UIN, Matana, UNIS) dan program sekolah Kemenkeu Mengajar.',
-        icon: 'tabler:school',
-      },
-      {
-        title: 'Media & Publik Digital',
-        description: 'Kolaborasi dengan RRI Banten, insan pers daerah, serta saluran komunikasi digital resmi institusi.',
-        icon: 'tabler:device-tv',
-      },
-    ]}
-  />
-
-  <!-- Features2 Widget (Sapa & Kontak Ringkas) ************** -->
-
-  <Features2
-    title="Mari Terhubung"
-    tagline="CONTACT / つながる"
-    columns={2}
-    items={[
-      {
-        title: 'Diskusi & Kirim Pesan',
-        description:
-          'Terbuka untuk ruang diskusi seputar literasi perpajakan, penulisan opini, maupun penguatan Tax Center.',
-        icon: 'tabler:messages',
-        callToAction: {
-          text: 'Ke Halaman Kontak',
-          href: '/contact',
+    <Features3
+      title="Pilar Profesional & Personal"
+      subtitle="Enam dimensi utama yang membentuk perspektif kerja, kepenulisan, dan kontribusi publik:"
+      columns={3}
+      isBeforeContent={true}
+      items={[
+        {
+          title: 'TAX / Administrasi Pajak',
+          description:
+            'Pengalaman dalam pelayanan wajib pajak, kepatuhan, serta administrasi perpajakan yang berkeadilan dan responsif.',
+          icon: 'tabler:receipt-tax',
         },
-      },
-      {
-        title: 'Jejak Sosial Media',
-        description:
-          'Ikuti catatan harian, aktivitas berlari, dan dokumentasi kegiatan publik melalui akun Instagram resmi.',
-        icon: 'tabler:brand-instagram',
-        callToAction: {
-          text: '@idar.layla',
-          href: 'https://www.instagram.com/idar.layla/',
-          target: '_blank',
+        {
+          title: 'CONNECT / Hubungan Kelembagaan',
+          description:
+            'Menghubungkan otoritas pajak dengan media, instansi pemerintah, dan ekosistem publik untuk membangun komunikasi yang terbuka.',
+          icon: 'tabler:building-community',
         },
-      },
-    ]}
-  />
+        {
+          title: 'EDUCATE / Edukasi & Tax Center',
+          description:
+            'Pengembangan Tax Center di perguruan tinggi, pembimbingan relawan pajak, dan penguatan literasi perpajakan generasi muda.',
+          icon: 'tabler:school',
+        },
+      ]}
+    />
+
+  </section>
+
+
+  <!-- =========================================================
+       WRITING / REFLECTION / MOVEMENT
+  ========================================================== -->
+
+  <section class="py-4 sm:py-8">
+
+    <Features3
+      columns={3}
+      isAfterContent={true}
+      items={[
+        {
+          title: 'WRITE / Opini & Editing',
+          description:
+            'Menulis artikel publikasi resmi, menyunting pemberitaan institusi, serta memoderasi lokakarya penulisan opini.',
+          icon: 'tabler:pencil',
+        },
+        {
+          title: 'REFLECT / Refleksi Kebijakan',
+          description:
+            'Menghubungkan pengalaman kerja dan isu kebijakan publik dengan analogi sederhana yang dekat dengan kehidupan masyarakat.',
+          icon: 'tabler:bulb',
+        },
+        {
+          title: 'MOVE / Running & Stamina',
+          description:
+            'Rutinitas berlari 5 km sebelum bekerja sebagai bagian dari menjaga stamina, fokus, dan keseimbangan hidup.',
+          icon: 'tabler:run',
+        },
+      ]}
+      image={{
+        src: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1800&q=85',
+        alt: 'Dokumen, catatan, dan aktivitas penulisan profesional',
+      }}
+    />
+
+  </section>
+
+
+  <!-- =========================================================
+       PRINCIPLES & VALUES
+  ========================================================== -->
+
+  <section class="py-6 sm:py-10">
+
+    <Steps2
+      title="Prinsip & Nilai Pelayanan"
+      subtitle="Nilai-nilai fundamental yang melandasi setiap langkah pelayanan publik dan hubungan masyarakat:"
+      items={[
+        {
+          title: 'Integritas & Akuntabilitas Sektor Publik',
+          description:
+            'Menjaga amanah tata kelola keuangan negara dengan keterbukaan, kepatuhan pada aturan, dan penyampaian informasi yang akurat.',
+        },
+        {
+          title: 'Komunikasi Publik yang Inklusif & Empatis',
+          description:
+            'Menyampaikan kebijakan perpajakan yang rumit menjadi narasi yang mudah dipahami dan relevan bagi seluruh lapisan masyarakat.',
+        },
+        {
+          title: 'Sinergi & Kolaborasi Kelembagaan',
+          description:
+            'Membangun hubungan yang harmonis dan produktif dengan akademisi, media massa, serta institusi pemerintah daerah.',
+        },
+      ]}
+    />
+
+  </section>
+
+
+  <!-- =========================================================
+       CAREER TIMELINE
+  ========================================================== -->
+
+  <section class="py-6 sm:py-10">
+
+    <Timeline
+      id="history"
+      tagline="JOURNEY / Perjalanan Terverifikasi"
+      title="Rekam Karier & Akademik"
+      subtitle="Jejak penugasan struktural, rekam akademik, dan aktivitas publik yang tercatat secara terbuka:"
+      layout="alternate"
+      items={[
+        {
+          date: '2002',
+          title: 'Awal Masa Kedinasan DJP',
+          description:
+            'Memulai pengabdian di Direktorat Jenderal Pajak, Kementerian Keuangan Republik Indonesia.',
+          icon: 'tabler:briefcase',
+        },
+        {
+          date: '2010–2011',
+          title: 'Studi S2 & Riset Akademik (Unpad)',
+          description:
+            'Penelitian tesis mengenai kepatuhan wajib pajak: "Enhancing taxpayer compliance in Indonesia: A Case study of account representatives di Tasikmalaya" di Universitas Padjadjaran.',
+          icon: 'tabler:certificate',
+        },
+        {
+          date: '2019',
+          title: 'Kasi Kerja Sama & Humas (DJP Banten)',
+          description:
+            'Berdasarkan KEP-581/PJ/2019, dimutasi dari Kepala Seksi Pelayanan KPP Pratama Banda Aceh menjadi Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten.',
+          icon: 'tabler:news',
+        },
+        {
+          date: '2022–2024',
+          title: 'Lighthouse Team, Siniar & Literasi',
+          description:
+            'Anggota Lighthouse Team Kanwil DJP Banten (KMK 112/2022), moderator podcast "Kata.lo.gue", serta penggerak Club Literacy & Tax Center kampus.',
+          icon: 'tabler:microphone',
+        },
+        {
+          date: 'Saat ini',
+          title: 'KPP Madya Dua Jakarta Barat',
+          description:
+            'Bertugas di KPP Madya Dua Jakarta Barat, aktif sebagai Relawan Pengajar Kemenkeu Mengajar serta menulis opini publik.',
+          icon: 'tabler:building-bank',
+          highlight: true,
+        },
+      ]}
+    />
+
+  </section>
+
+
+  <!-- =========================================================
+       NETWORK / PUBLIC POLICY
+  ========================================================== -->
+
+  <section class="py-6 sm:py-10">
+
+    <Features2
+      title="Fokus Wilayah & Jejaring Kebijakan"
+      tagline="LOCATIONS & NETWORK"
+      columns={3}
+      items={[
+        {
+          title: 'Kanwil DJP Banten & Jakarta Barat',
+          description:
+            'Pusat penugasan hubungan masyarakat, pelayanan unit vertikal, media visit, dan kemitraan Tax Center.',
+          icon: 'tabler:map-pin',
+        },
+        {
+          title: 'Kemenkeu Mengajar & Kampus',
+          description:
+            'Jejak pengabdian edukasi di lingkungan universitas dan program sekolah Kemenkeu Mengajar.',
+          icon: 'tabler:school',
+        },
+        {
+          title: 'Media & Publik Digital',
+          description:
+            'Kolaborasi dengan media daerah, insan pers, serta saluran komunikasi digital resmi institusi.',
+          icon: 'tabler:device-tv',
+        },
+      ]}
+    />
+
+  </section>
+
+
+  <!-- =========================================================
+       CONTACT
+  ========================================================== -->
+
+  <section class="pb-8 pt-6 sm:pb-12 sm:pt-10">
+
+    <Features2
+      title="Mari Terhubung"
+      tagline="CONTACT / つながる"
+      columns={2}
+      items={[
+        {
+          title: 'Diskusi & Kirim Pesan',
+          description:
+            'Terbuka untuk ruang diskusi seputar literasi perpajakan, penulisan opini, maupun penguatan Tax Center.',
+          icon: 'tabler:messages',
+          callToAction: {
+            text: 'Ke Halaman Kontak',
+            href: '/contact',
+          },
+        },
+        {
+          title: 'Jejak Sosial Media',
+          description:
+            'Ikuti catatan harian, aktivitas berlari, dan dokumentasi kegiatan publik melalui akun Instagram resmi.',
+          icon: 'tabler:brand-instagram',
+          callToAction: {
+            text: '@idar.layla',
+            href: 'https://www.instagram.com/idar.layla/',
+            target: '_blank',
+          },
+        },
+      ]}
+    />
+
+  </section>
+
 </Layout>
