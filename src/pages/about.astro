@@ -6,6 +6,23 @@ import Steps2 from '~/components/widgets/Steps2.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
 
+/*
+ * =========================================================
+ * IMAGE ASSETS
+ * =========================================================
+ *
+ * File berada di:
+ *
+ * src/assets/images/tentang-1.png
+ * src/assets/images/tentang-2.png
+ *
+ * Karena berada di src/assets, gambar harus di-import.
+ */
+
+import tentangImage1 from '~/assets/images/tentang-1.png';
+import tentangImage2 from '~/assets/images/tentang-2.png';
+
+
 const metadata = {
   title: 'Tentang / プロフィール — Ida Rosnida Laila',
   description:
@@ -23,7 +40,7 @@ const metadata = {
   <Hero
     tagline="ABOUT / プロフィール"
     image={{
-      src: 'assets\images\tentang-1.png',
+      src: tentangImage1,
       alt: 'Perempuan profesional dengan MacBook, dokumen perpajakan, analisis kebijakan, dan nuansa Jepang',
     }}
   >
@@ -238,7 +255,7 @@ const metadata = {
     >
 
       <img
-        src="'assets\images\tentang-1.png',"
+        src={tentangImage2.src}
         alt="Perempuan profesional dengan MacBook dalam suasana Jepang yang menggambarkan dimensi profesional dan personal"
         class="block h-[250px] w-full object-cover object-center
         sm:h-[300px]
