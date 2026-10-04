@@ -436,67 +436,45 @@ const structuredData = [
   </Fragment>
 </Features2>
 
-  <!-- Timeline Widget **************** -->
+  <!-- Timeline / Manifesto Widget (Ganti Jejak Pengabdian agar tidak double dengan About) -->
 
   <Timeline
-    id="story"
+    id="perspective"
+    tagline="PERSPECTIVE / 視点 — SHITEN"
+    title="Empat Sudut Pandang Kebijakan & Manusia"
+    subtitle="Prinsip dasar yang memandu cara berpikir dalam merespons dinamika publik, angka perpajakan, dan kehangatan cerita:"
     layout="alternate"
-    tagline="Jejak Pengabdian"
-    title="Langkah Konsisten, Dedikasi Berkelanjutan"
-    subtitle="Sebuah catatan perjalanan karier yang dibangun di atas komitmen pelayanan publik yang terus   berkembang melalui interaksi, edukasi, dan hobi dalam merangkai kata."
     items={[
-    {
-    date: '2002',
-    title: 'Memulai Pengabdian',
-    description:
-      'Mengawali perjalanan kedinasan di Kementerian Keuangan Republik Indonesia, menanamkan komitmen awal untuk memberikan pelayanan terbaik bagi negeri.',
-    icon: 'tabler:briefcase',
-    },
-    {
-    date: '2010–2011',
-    title: 'Menajamkan Kapasitas Akademik',
-    description:
-      'Menjalani penugasan studi Strata 2 (S2) untuk memperdalam ilmu ekonomi dan tata kelola administrasi publik, guna memperkuat landasan berpikir strategis.',
-    icon: 'tabler:school',
-    },
-    {
-    date: '2019',
-    title: 'Mengemban Amanah Baru di Banten',
-    description:
-      'Berdasarkan KEP-581/PJ/2019, resmi dipercaya sebagai Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten, bertransisi menuju strategi komunikasi publik.',
-    icon: 'tabler:building',
-    },
-    {
-    date: '2020–2022',
-    title: 'Menakhodai Komunikasi & Transformasi',
-    description:
-      'Memimpin kehumasan institusi, menggerakkan Lighthouse Team Kanwil DJP Banten, serta aktif merawat budaya literasi melalui lokakarya penulisan dan edukasi publik.',
-    icon: 'tabler:users-group',
-    },
-    {
-    date: '2023–2024',
-    title: 'Ruang Siniar & Narasi Kebijakan',
-    description:
-      'Memperluas jangkauan edukasi perpajakan melalui artikel opini, pengelolaan media kelembagaan, kunjungan media, hingga memoderasi siniar edukatif seperti Kata.lo.gue.',
-    icon: 'tabler:microphone',
-    },
-    {
-    date: '2025–Kini',
-    title: 'Berbagi Inspirasi Lintas Batas',
-    description:
-      'Terlibat aktif sebagai relawan pengajar dalam program Kemenkeu Mengajar, serta terus merawat hobi menulis dan merefleksikan dinamika profesional dalam keseharian.',
-    icon: 'tabler:heart-handshake',
-    },
-    {
-    date: 'Refleksi',
-    title: 'Dedikasi Berkelanjutan',
-    description:
-      'Berawal dari dedikasi panjang di sektor publik, perjalanan ini terus tumbuh melalui dinamika komunikasi, ruang-ruang edukasi, serta kecintaan yang konsisten pada dunia literasi.',
-    icon: 'tabler:sparkles',
-    highlight: true,
-    },
-    { icon: 'tabler:dots', ghost: true },
-  ]}
+      {
+        date: '01 / 意 — I',
+        title: 'Pajak Bukan Sekadar Angka',
+        description:
+          'Di balik setiap data, kepatuhan, dan penerimaan negara, selalu ada cerita tentang keadilan, gotong royong, serta hadirnya pemerintah di tengah masyarakat.',
+        icon: 'tabler:receipt-tax',
+      },
+      {
+        date: '02 / 和 — WA',
+        title: 'Komunikasi yang Inklusif & Empatis',
+        description:
+          'Kebijakan publik yang rumit hanya akan berdaya guna ketika berhasil diterjemahkan menjadi narasi yang jernih, inklusif, dan menyapa ruang dengar masyarakat.',
+        icon: 'tabler:messages',
+      },
+      {
+        date: '03 / 文 — BUN',
+        title: 'Literasi Sebagai Jembatan',
+        description:
+          'Membaca dan menulis adalah cara merawat kepekaan emosional, membuka dialog interaktif, serta merangkai gagasan yang bermanfaat bagi sesama.',
+        icon: 'tabler:book-2',
+      },
+      {
+        date: '04 / 志 — SHI',
+        title: 'Keberlanjutan Dedikasi',
+        description:
+          'Konsistensi kecil yang dirawat terus-menerus—baik dalam tugas kedinasan, kegiatan edukasi, maupun karya tulis personal—akan memberi dampak jangka panjang.',
+        icon: 'tabler:compass',
+        highlight: true,
+      },
+    ]}
   />
 
   <!-- Note Widget ******************* -->
@@ -508,7 +486,7 @@ const structuredData = [
 
   <!-- HighlightedPosts Widget ******* -->
 
-  <BlogHighlightedPosts
+  <BlogHighlightedPosts 
     title="Catatan, Opini, & Jejak Publikasi"
     postIds={[
       'pajak-walau-dibenci-namun-dinanti',
@@ -519,7 +497,7 @@ const structuredData = [
     information={`Ruang berbagi pemikiran seputar kebijakan perpajakan, komunikasi publik, literasi edukasi, hingga refleksi personal di balik rutinitas pelayanan masyarakat.`}
   />
 
-  
+
   <!-- FAQs Widget ******************* -->
 
    <FAQs
