@@ -1,7 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+
 import Features2 from '~/components/widgets/Features2.astro';
 import Features3 from '~/components/widgets/Features3.astro';
-import Hero from '~/components/widgets/Hero.astro';
 import Steps2 from '~/components/widgets/Steps2.astro';
 import Timeline from '~/components/widgets/Timeline.astro';
 import Layout from '~/layouts/PageLayout.astro';
@@ -11,12 +12,10 @@ import Layout from '~/layouts/PageLayout.astro';
  * IMAGE ASSETS
  * =========================================================
  *
- * File berada di:
+ * Lokasi:
  *
  * src/assets/images/tentang-1.png
  * src/assets/images/tentang-2.png
- *
- * Karena berada di src/assets, gambar harus di-import.
  */
 
 import tentangImage1 from '~/assets/images/tentang-1.png';
@@ -37,28 +36,105 @@ const metadata = {
        Pajak, Kebijakan, dan Cerita di Balik Angka
   ========================================================== -->
 
-  <Hero
-    tagline="ABOUT / プロフィール"
-    image={{
-      src: tentangImage1,
-      alt: 'Perempuan profesional dengan MacBook, dokumen perpajakan, analisis kebijakan, dan nuansa Jepang',
-    }}
+  <section
+    class="mx-auto w-full px-5 pt-5 pb-3
+    sm:px-6 sm:pt-6 sm:pb-4
+    lg:px-8 lg:pt-7 lg:pb-5"
   >
-    <Fragment slot="title">
-      Pajak, Kebijakan, dan <br />
-      <span class="text-accent dark:text-blue-400">
-        Cerita di Balik Angka
-      </span>
-    </Fragment>
 
-    <Fragment slot="subtitle">
-      Ida Rosnida Laila, S.H., M.E., M.Ids. adalah profesional perpajakan dan
-      komunikator sektor publik di Direktorat Jenderal Pajak, Kementerian
-      Keuangan Republik Indonesia. Perjalanan kariernya membentang dari
-      pelayanan wajib pajak, komunikasi publik, hubungan kelembagaan, hingga
-      edukasi dan literasi perpajakan di tingkat regional.
-    </Fragment>
-  </Hero>
+    <!--
+      Container teks dan gambar sengaja dibuat sama lebarnya.
+      Ini membuat cover mengikuti lebar judul/deskripsi,
+      bukan memenuhi seluruh lebar halaman.
+    -->
+    <div class="mx-auto w-full max-w-[560px]">
+
+      <!-- TAGLINE -->
+      <div class="text-center">
+        <div
+          class="mb-1 text-[9px] font-semibold uppercase
+          tracking-[0.08em] text-blue-600
+          dark:text-blue-400
+          sm:text-[10px]"
+        >
+          ABOUT / プロフィール
+        </div>
+      </div>
+
+
+      <!-- TITLE -->
+      <div class="text-center">
+
+        <h1
+          class="font-heading text-[30px] font-bold leading-[1.02]
+          tracking-[-0.045em]
+          text-slate-900
+          dark:text-slate-100
+          sm:text-[34px]
+          md:text-[38px]"
+        >
+          Pajak, Kebijakan, dan
+          <br />
+
+          <span class="text-accent dark:text-blue-400">
+            Cerita di Balik Angka
+          </span>
+        </h1>
+
+      </div>
+
+
+      <!-- SUBTITLE -->
+      <div
+        class="mx-auto mt-2.5 max-w-[550px]
+        text-center
+        text-[9px]
+        font-normal
+        leading-[1.55]
+        text-slate-500
+        dark:text-slate-400
+        sm:mt-3
+        sm:text-[10px]
+        md:text-[11px]"
+      >
+        Ida Rosnida Laila, S.H., M.E., M.Ids. adalah profesional perpajakan dan
+        komunikator sektor publik di Direktorat Jenderal Pajak, Kementerian
+        Keuangan Republik Indonesia. Perjalanan kariernya membentang dari
+        pelayanan wajib pajak, komunikasi publik, hubungan kelembagaan, hingga
+        edukasi dan literasi perpajakan di tingkat regional.
+      </div>
+
+
+      <!--
+        COVER IMAGE
+
+        Lebarnya mengikuti container teks di atas.
+        Tidak lagi menggunakan max-w-6xl.
+      -->
+      <div
+        class="mx-auto mt-7 w-full
+        sm:mt-8"
+      >
+
+        <Image
+          src={tentangImage1}
+          alt="Perempuan profesional dengan MacBook, dokumen perpajakan, analisis kebijakan, dan nuansa Jepang"
+          class="block h-auto w-full rounded-lg
+          object-cover object-center
+          shadow-sm
+          sm:rounded-xl"
+          widths={[480, 560, 700]}
+          sizes="(max-width: 640px) 100vw, 560px"
+          loading="eager"
+          format="webp"
+          quality={88}
+        />
+
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- =========================================================
@@ -66,135 +142,165 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="mx-auto max-w-6xl px-5 py-8 sm:px-6 sm:py-10 lg:px-8 lg:py-12"
+    class="mx-auto max-w-6xl px-5 py-6
+    sm:px-6 sm:py-7
+    lg:px-8 lg:py-8"
   >
 
-    <div class="mb-6 text-center sm:mb-7">
+    <div class="mb-5 text-center sm:mb-6">
+
       <h2
-        class="font-heading text-lg font-semibold tracking-[-0.025em]
-        text-slate-900 dark:text-slate-100
-        sm:text-xl md:text-2xl"
+        class="font-heading text-lg font-semibold
+        tracking-[-0.025em]
+        text-slate-900
+        dark:text-slate-100
+        sm:text-xl
+        md:text-2xl"
       >
         Jejak & Dedikasi Publik
       </h2>
+
     </div>
+
 
     <div
       class="grid grid-cols-2 text-center
       md:grid-cols-4
-      md:divide-x md:divide-slate-200
+      md:divide-x
+      md:divide-slate-200
       dark:md:divide-slate-800"
     >
 
       <!-- ITEM 1 -->
       <div
-        class="px-4 py-4
-        border-b border-slate-200
+        class="border-b border-slate-200
+        px-4 py-4
         md:border-b-0
         dark:border-slate-800"
       >
+
         <div
           class="text-[18px] font-semibold leading-tight
           tracking-[-0.025em]
-          text-blue-600 dark:text-blue-400
-          sm:text-[20px] md:text-[21px]"
+          text-blue-600
+          dark:text-blue-400
+          sm:text-[20px]
+          md:text-[21px]"
         >
           2002
         </div>
 
         <div
           class="mx-auto mt-1.5 max-w-[140px]
-          text-[9px] font-normal uppercase
-          leading-[1.5] tracking-[0.09em]
-          text-slate-500 dark:text-slate-400
+          text-[9px] uppercase
+          leading-[1.5]
+          tracking-[0.09em]
+          text-slate-500
+          dark:text-slate-400
           sm:text-[10px]"
         >
           Awal Langkah Pengabdian
         </div>
+
       </div>
 
 
       <!-- ITEM 2 -->
       <div
-        class="px-4 py-4
-        border-b border-slate-200
+        class="border-b border-slate-200
+        px-4 py-4
         md:border-b-0
         dark:border-slate-800"
       >
+
         <div
           class="mx-auto max-w-[140px]
           text-[17px] font-semibold leading-[1.15]
           tracking-[-0.025em]
-          text-blue-600 dark:text-blue-400
-          sm:text-[19px] md:text-[20px]"
+          text-blue-600
+          dark:text-blue-400
+          sm:text-[19px]
+          md:text-[20px]"
         >
           Studi & Riset
         </div>
 
         <div
           class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] font-normal uppercase
-          leading-[1.5] tracking-[0.09em]
-          text-slate-500 dark:text-slate-400
+          text-[9px] uppercase
+          leading-[1.5]
+          tracking-[0.09em]
+          text-slate-500
+          dark:text-slate-400
           sm:text-[10px]"
         >
           Hukum, Ekonomi & Kebijakan
         </div>
+
       </div>
 
 
       <!-- ITEM 3 -->
-      <div
-        class="px-4 py-4"
-      >
+      <div class="px-4 py-4">
+
         <div
           class="mx-auto max-w-[140px]
           text-[17px] font-semibold leading-[1.15]
           tracking-[-0.025em]
-          text-blue-600 dark:text-blue-400
-          sm:text-[19px] md:text-[20px]"
+          text-blue-600
+          dark:text-blue-400
+          sm:text-[19px]
+          md:text-[20px]"
         >
           Kata.lo.gue
         </div>
 
         <div
           class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] font-normal uppercase
-          leading-[1.5] tracking-[0.09em]
-          text-slate-500 dark:text-slate-400
+          text-[9px] uppercase
+          leading-[1.5]
+          tracking-[0.09em]
+          text-slate-500
+          dark:text-slate-400
           sm:text-[10px]"
         >
           Siniar & Bincang Santai
         </div>
+
       </div>
 
 
       <!-- ITEM 4 -->
-      <div
-        class="px-4 py-4"
-      >
+      <div class="px-4 py-4">
+
         <div
           class="mx-auto max-w-[145px]
           text-[17px] font-semibold leading-[1.15]
           tracking-[-0.025em]
-          text-blue-600 dark:text-blue-400
-          sm:text-[19px] md:text-[20px]"
+          text-blue-600
+          dark:text-blue-400
+          sm:text-[19px]
+          md:text-[20px]"
         >
           Kemenkeu Mengajar
         </div>
 
         <div
           class="mx-auto mt-1.5 max-w-[145px]
-          text-[9px] font-normal uppercase
-          leading-[1.5] tracking-[0.09em]
-          text-slate-500 dark:text-slate-400
+          text-[9px] uppercase
+          leading-[1.5]
+          tracking-[0.09em]
+          text-slate-500
+          dark:text-slate-400
           sm:text-[10px]"
         >
           Ruang Berbagi & Edukasi
         </div>
+
       </div>
 
     </div>
+
   </section>
 
 
@@ -204,7 +310,13 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="mt-0 py-2 sm:py-3"
+    class="mx-auto max-w-6xl
+    px-5
+    pt-2
+    pb-0
+    sm:px-6
+    sm:pt-3
+    lg:px-8"
   >
 
     <Features3
@@ -239,29 +351,43 @@ const metadata = {
 
   <!-- =========================================================
        SECOND VISUAL
-       Gambar perempuan + MacBook + nuansa Jepang
+       Gambar perempuan + nuansa Jepang
+       
+       JARAK DIPERKECIL
+       sekitar 50% lebih rapat
   ========================================================== -->
 
   <section
-    class="mx-auto max-w-6xl px-5 py-2 sm:px-6 sm:py-3 lg:px-8"
+    class="mx-auto max-w-6xl
+    px-5
+    -mt-2
+    pt-0
+    pb-0
+    sm:px-6
+    sm:-mt-3
+    lg:px-8"
   >
 
     <div
-      class="relative overflow-hidden rounded-2xl
-      border border-slate-100
-      bg-white shadow-sm
-      dark:border-slate-800
-      dark:bg-slate-900"
+      class="mx-auto w-full
+      max-w-6xl"
     >
 
-      <img
-        src={tentangImage2.src}
-        alt="Perempuan profesional dengan MacBook dalam suasana Jepang yang menggambarkan dimensi profesional dan personal"
-        class="block h-[250px] w-full object-cover object-center
-        sm:h-[300px]
-        md:h-[350px]
-        lg:h-[380px]"
+      <Image
+        src={tentangImage2}
+        alt="Perempuan profesional dengan nuansa Jepang yang menggambarkan perpaduan profesional dan personal"
+        class="block h-[210px] w-full
+        rounded-xl
+        object-cover object-center
+        shadow-sm
+        sm:h-[260px]
+        md:h-[300px]
+        lg:h-[330px]"
+        widths={[700, 1000, 1400]}
+        sizes="(max-width: 768px) 100vw, 1152px"
         loading="lazy"
+        format="webp"
+        quality={86}
       />
 
     </div>
@@ -275,7 +401,14 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="mt-0 py-2 sm:py-3"
+    class="mx-auto max-w-6xl
+    px-5
+    pt-0
+    pb-2
+    sm:px-6
+    sm:pt-0
+    sm:pb-3
+    lg:px-8"
   >
 
     <Features3
@@ -310,7 +443,8 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="py-5 sm:py-7"
+    class="py-5
+    sm:py-7"
   >
 
     <Steps2
@@ -343,7 +477,8 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="py-5 sm:py-7"
+    class="py-5
+    sm:py-7"
   >
 
     <Timeline
@@ -400,7 +535,8 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="py-5 sm:py-7"
+    class="py-5
+    sm:py-7"
   >
 
     <Features2
@@ -437,7 +573,10 @@ const metadata = {
   ========================================================== -->
 
   <section
-    class="pb-8 pt-5 sm:pb-12 sm:pt-7"
+    class="pb-8
+    pt-5
+    sm:pb-12
+    sm:pt-7"
   >
 
     <Features2
