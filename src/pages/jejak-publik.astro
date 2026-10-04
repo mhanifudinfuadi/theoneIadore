@@ -1,0 +1,501 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import Breadcrumbs from '~/components/common/Breadcrumbs.astro';
+import { getPermalink } from '~/utils/permalinks';
+
+const metadata = {
+  title: 'Jejak Publik — Ida Rosnida Laila',
+  description:
+    'Karya, kontribusi, publikasi, edukasi, media, dan keterlibatan publik Ida Rosnida Laila yang dapat ditelusuri melalui sumber terbuka.',
+  openGraph: {
+    type: 'website',
+  },
+};
+
+const breadcrumbs = [
+  { text: 'Home', href: getPermalink('/') },
+  { text: 'Jejak Publik' },
+];
+
+const writing = [
+  {
+    year: '2021',
+    type: 'Ditulis',
+    title: 'Mengintip Insentif Pajak Bantu Masyarakat',
+    description:
+      'Tulisan mengenai insentif pajak dan upaya pemulihan ekonomi masyarakat pada masa pandemi, dengan perhatian pada edukasi kebijakan kepada wajib pajak.',
+    tags: ['Pajak', 'Kebijakan Fiskal', 'UMKM', 'Edukasi'],
+    href: 'https://stats.pajak.go.id/id/artikel/mengintip-insentif-pajak-bantu-masyarakat',
+    source: 'Direktorat Jenderal Pajak',
+  },
+  {
+    year: '2023',
+    type: 'Ditulis',
+    title: 'Pajak, Walau Dibenci Namun Dinanti',
+    description:
+      'Refleksi yang menghubungkan pengalaman sehari-hari, pendidikan, APBN, dan peran penerimaan pajak dalam pembiayaan kepentingan publik.',
+    tags: ['Pajak', 'APBN', 'Pendidikan', 'Refleksi'],
+    href: 'https://www.pajak.go.id/index.php/id/artikel/pajak-walau-dibenci-namun-dinanti',
+    source: 'Direktorat Jenderal Pajak',
+    featured: true,
+  },
+];
+
+const editorial = [
+  {
+    year: '2024',
+    type: 'Editorial',
+    title: 'Pajak Banten Kenalkan TER Pemotongan Pajak di Siniar',
+    description:
+      'Jejak komunikasi publik melalui siniar Kata.lo.gue. Sumber resmi mencantumkan Ida Rosnida Laila sebagai moderator sekaligus editor pada publikasi.',
+    role: 'Moderator · Editor',
+    href: 'https://www.pajak.go.id/en/node/104990',
+    source: 'Direktorat Jenderal Pajak',
+  },
+  {
+    year: '2023',
+    type: 'Publikasi',
+    title: 'DJP dan Pemkot Cilegon Bahas Perjanjian Kerja Sama',
+    description:
+      'Contoh jejak editorial dalam publikasi kelembagaan yang mendokumentasikan komunikasi dan hubungan kerja sama pemerintah.',
+    role: 'Editor',
+    source: 'Publikasi DJP',
+  },
+  {
+    year: '2023',
+    type: 'Publikasi',
+    title: 'Puluhan Mahasiswa UIN Jakarta Pahami Pemadanan NIK-NPWP',
+    description:
+      'Jejak publikasi yang berada pada irisan edukasi perpajakan, perguruan tinggi, dan komunikasi kelembagaan.',
+    role: 'Editor',
+    source: 'Publikasi DJP',
+  },
+  {
+    year: '2023',
+    type: 'Publikasi',
+    title: 'UMKM Banten Ikuti BDS Bersama Goto',
+    description:
+      'Jejak komunikasi yang berkaitan dengan edukasi dan dukungan kepada pelaku UMKM.',
+    role: 'Editor',
+    source: 'Publikasi DJP',
+  },
+];
+
+const education = [
+  {
+    year: '2020',
+    title: 'Lokakarya Penulisan',
+    description:
+      'Moderasi lokakarya penulisan dengan tema Teknik Penulisan Opini yang diikuti mahasiswa dari berbagai wilayah Indonesia.',
+    type: 'Literasi',
+  },
+  {
+    year: '2022',
+    title: 'Club Literacy & Tax Center',
+    description:
+      'Keterlibatan dalam ruang literasi dan edukasi yang mempertemukan lingkungan perpajakan dengan mahasiswa dan perguruan tinggi.',
+    type: 'Edukasi',
+  },
+  {
+    year: '2022',
+    title: 'Lighthouse Team Kanwil DJP Banten',
+    description:
+      'Pada dokumen Kementerian Keuangan tahun 2022, Ida Rosnida Laila tercatat sebagai bagian dari Lighthouse Team Kanwil DJP Banten.',
+    type: 'Kelembagaan',
+  },
+];
+
+const publicContribution = [
+  {
+    year: '2025',
+    title: 'Kemenkeu Mengajar 10',
+    description:
+      'Daftar relawan yang terindeks mencantumkan Ida Rosnida Laila sebagai Relawan Pengajar. Catatan ini diperlakukan sebagai keterlibatan program/relawan, bukan sebagai bukti mutasi struktural.',
+    type: 'Relawan Pengajar',
+    source: 'Kementerian Keuangan',
+  },
+  {
+    year: '2024',
+    title: 'Media Visit RRI Banten',
+    description:
+      'Jejak hubungan media yang terdokumentasi dalam publikasi DJP dan selaras dengan peran komunikasi serta hubungan kelembagaan.',
+    type: 'Hubungan Media',
+    source: 'Publikasi DJP',
+  },
+];
+
+const timeline = [
+  {
+    year: '2002',
+    title: 'Awal masa kedinasan',
+    text: 'NIP menunjukkan awal masa kedinasan pada Desember 2002. Jabatan pertama yang spesifik belum ditemukan dalam arsip publik terindeks.',
+  },
+  {
+    year: '±2010–2011',
+    title: 'Pendidikan & konteks Kanwil DJP Jawa Barat I',
+    text: 'Terdokumentasi dalam konteks Kanwil DJP Jawa Barat I dan proses/penempatan pendidikan S2. Jabatan struktural spesifik pada periode ini belum dapat dipastikan.',
+  },
+  {
+    year: '2019',
+    title: 'Kerja sama & hubungan masyarakat',
+    text: 'KEP-581/PJ/2019 memuat mutasi dari Kepala Seksi Pelayanan KPP Pratama Banda Aceh menjadi Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten.',
+  },
+  {
+    year: '2020',
+    title: 'Komunikasi kelembagaan',
+    text: 'Dokumen Kementerian Keuangan tahun 2020 kembali mencantumkan jabatan Kepala Seksi Kerja Sama dan Hubungan Masyarakat Kanwil DJP Banten.',
+  },
+  {
+    year: '2021',
+    title: 'Menulis & mengedukasi',
+    text: 'Publikasi DJP mencatat aktivitas komunikasi dan edukasi serta artikel “Mengintip Insentif Pajak Bantu Masyarakat” sebagai tulisan Ida.',
+  },
+  {
+    year: '2022',
+    title: 'Literasi & Lighthouse Team',
+    text: 'Dokumen Kementerian Keuangan tahun 2022 mencantumkan jabatan yang sama dan posisi Lighthouse Team pada Kanwil DJP Banten.',
+  },
+  {
+    year: '2023',
+    title: 'Tulisan & komunikasi publik',
+    text: 'Publikasi DJP masih mencantumkan peran tersebut dalam berbagai kegiatan; artikel “Pajak, Walau Dibenci Namun Dinanti” juga terbit pada tahun ini.',
+  },
+  {
+    year: '2024',
+    title: 'Siniar & media',
+    text: 'Menjadi moderator siniar Kata.lo.gue tentang TER/PPh 21 dan muncul dalam aktivitas media visit.',
+  },
+  {
+    year: '2025',
+    title: 'Kontribusi pengajaran',
+    text: 'Daftar Kemenkeu Mengajar 10 yang terindeks mencantumkan Ida sebagai Relawan Pengajar.',
+  },
+];
+
+const sourceNotes = [
+  'Direktorat Jenderal Pajak — publikasi dan artikel yang secara eksplisit mencantumkan nama Ida Rosnida Laila.',
+  'Kementerian Keuangan — dokumen jabatan dan daftar program publik yang terindeks.',
+  'Dokumen riset publik yang menghimpun jejak karier, karya tulis, editorial, literasi, Tax Center, edukasi, media, dan kontribusi publik.',
+];
+
+const externalLinkAttrs = (href?: string) =>
+  href
+    ? {
+        target: '_blank',
+        rel: 'noopener noreferrer',
+      }
+    : {};
+---
+
+<Layout metadata={metadata}>
+  <Breadcrumbs bar items={breadcrumbs} />
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden">
+    <div class="mx-auto max-w-6xl px-6 py-14 sm:py-16 lg:py-20">
+      <div class="max-w-4xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.2em] text-primary-600 dark:text-primary-400">
+          Arsip publik · karya · kontribusi
+        </p>
+
+        <h1 class="mt-4 text-4xl font-bold tracking-tight text-gray-900 dark:text-white sm:text-5xl lg:text-6xl">
+          Jejak Publik
+        </h1>
+
+        <p class="mt-6 max-w-3xl text-xl leading-8 text-gray-600 dark:text-gray-300">
+          Karya, kontribusi, dan keterlibatan yang meninggalkan rekam.
+        </p>
+
+        <p class="mt-4 max-w-3xl text-base leading-7 text-gray-500 dark:text-gray-400">
+          Halaman ini menghimpun jejak yang dapat ditelusuri melalui publikasi,
+          dokumen kelembagaan, kegiatan edukasi, media, dan program kontribusi
+          publik—dengan membedakan antara karya yang ditulis, peran editorial,
+          keterlibatan kegiatan, dan kontribusi pengajaran.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-3 sm:grid-cols-4">
+        {
+          [
+            ['2002', 'Awal masa kedinasan'],
+            ['2019', 'Kerja sama & humas'],
+            ['2021', 'Karya tulis'],
+            ['2025', 'Kontribusi pengajaran'],
+          ].map(([value, label]) => (
+            <div class="rounded-2xl border border-gray-200 bg-white/80 p-5 dark:border-gray-800 dark:bg-gray-900/60">
+              <p class="text-2xl font-bold text-gray-900 dark:text-white">{value}</p>
+              <p class="mt-1 text-sm text-gray-500 dark:text-gray-400">{label}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- READING GUIDE -->
+  <section class="border-y border-gray-200 bg-gray-50/70 dark:border-gray-800 dark:bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+      <div class="max-w-2xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">
+          Cara membaca
+        </p>
+        <h2 class="mt-2 text-2xl font-bold text-gray-900 dark:text-white">
+          Empat bentuk jejak
+        </h2>
+      </div>
+
+      <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          [
+            ['Ditulis', 'Karya yang secara eksplisit mencantumkan Ida sebagai penulis.'],
+            ['Disunting', 'Publikasi yang mencantumkan peran editorial.'],
+            ['Terlibat', 'Kegiatan, moderasi, media, dan komunikasi publik.'],
+            ['Mengajar', 'Edukasi, literasi, Tax Center, dan program pengajaran.'],
+          ].map(([title, text], index) => (
+            <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-950/40">
+              <span class="text-xs font-semibold text-primary-600 dark:text-primary-400">0{index + 1}</span>
+              <h3 class="mt-3 font-semibold text-gray-900 dark:text-white">{title}</h3>
+              <p class="mt-2 text-sm leading-6 text-gray-500 dark:text-gray-400">{text}</p>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- WRITING -->
+  <section id="karya-tulis" class="scroll-mt-24 mx-auto max-w-6xl px-6 py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">01 · Ditulis</p>
+      <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Tulisan & Gagasan</h2>
+      <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">
+        Dua karya berikut secara eksplisit mencantumkan Ida Rosnida Laila sebagai penulis pada publikasi Direktorat Jenderal Pajak.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {
+        writing.map((item) => (
+          <article class:list={[
+            'group rounded-3xl border p-7 transition duration-300',
+            item.featured
+              ? 'border-primary-200 bg-primary-50/50 shadow-sm dark:border-primary-900/40 dark:bg-primary-950/10'
+              : 'border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-900/50',
+          ]}>
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">{item.year}</span>
+              <span class="rounded-full border border-gray-200 px-3 py-1 text-xs font-medium text-gray-500 dark:border-gray-700 dark:text-gray-400">{item.type}</span>
+            </div>
+
+            <h3 class="mt-6 text-2xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+            <p class="mt-4 leading-7 text-gray-600 dark:text-gray-300">{item.description}</p>
+
+            <div class="mt-5 flex flex-wrap gap-2">
+              {item.tags.map((tag) => (
+                <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-300">{tag}</span>
+              ))}
+            </div>
+
+            <div class="mt-7 flex items-center justify-between gap-4 border-t border-gray-200 pt-5 dark:border-gray-800">
+              <span class="text-xs text-gray-500 dark:text-gray-400">{item.source}</span>
+              <a
+                href={item.href}
+                {...externalLinkAttrs(item.href)}
+                class="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 dark:text-primary-400"
+              >
+                Baca sumber asli ↗
+              </a>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- EDITORIAL -->
+  <section id="editorial" class="scroll-mt-24 border-t border-gray-200 dark:border-gray-800">
+    <div class="mx-auto max-w-6xl px-6 py-16 lg:py-20">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">02 · Disunting</p>
+        <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Editorial & Publikasi</h2>
+        <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">
+          Sebagian jejak muncul bukan sebagai nama penulis, melainkan melalui peran editorial dalam komunikasi kelembagaan. Karena itu status editor dipisahkan dari status penulis.
+        </p>
+      </div>
+
+      <div class="mt-10 grid gap-4 md:grid-cols-2">
+        {
+          editorial.map((item) => (
+            <article class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900/50">
+              <div class="flex items-center justify-between gap-3">
+                <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">{item.year}</span>
+                <span class="text-xs text-gray-500 dark:text-gray-400">{item.type}</span>
+              </div>
+              <h3 class="mt-4 text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+              <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">{item.description}</p>
+              <div class="mt-5 flex items-center justify-between border-t border-gray-100 pt-4 dark:border-gray-800">
+                <span class="text-xs font-medium text-gray-500 dark:text-gray-400">{item.role} · {item.source}</span>
+                {item.href && (
+                  <a href={item.href} {...externalLinkAttrs(item.href)} class="text-sm font-semibold text-primary-600 dark:text-primary-400">
+                    Lihat ↗
+                  </a>
+                )}
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="edukasi" class="scroll-mt-24 bg-gray-50/70 dark:bg-gray-900/30">
+    <div class="mx-auto max-w-6xl px-6 py-16 lg:py-20">
+      <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">03 · Mengajar & berbagi</p>
+          <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Edukasi, Literasi & Tax Center</h2>
+          <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">
+            Ruang publik juga menjadi ruang belajar: mahasiswa, perguruan tinggi,
+            Tax Center, lokakarya penulisan, dan kegiatan literasi.
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          {
+            education.map((item) => (
+              <article class="rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-800 dark:bg-gray-900">
+                <div class="flex gap-5">
+                  <div class="w-16 shrink-0">
+                    <p class="text-sm font-bold text-primary-600 dark:text-primary-400">{item.year}</p>
+                    <p class="mt-1 text-xs text-gray-400">{item.type}</p>
+                  </div>
+                  <div class="border-l border-gray-200 pl-5 dark:border-gray-700">
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                    <p class="mt-2 text-sm leading-6 text-gray-600 dark:text-gray-400">{item.description}</p>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEDIA / PUBLIC CONTRIBUTION -->
+  <section id="media" class="scroll-mt-24 mx-auto max-w-6xl px-6 py-16 lg:py-20">
+    <div class="max-w-3xl">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">04 · Terlibat</p>
+      <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Media & Kontribusi Publik</h2>
+      <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">
+        Jejak komunikasi publik memperlihatkan peran moderator, hubungan media,
+        dan kontribusi dalam program pengajaran.
+      </p>
+    </div>
+
+    <div class="mt-10 grid gap-6 md:grid-cols-2">
+      {
+        publicContribution.map((item) => (
+          <article class="rounded-3xl border border-gray-200 bg-white p-7 dark:border-gray-800 dark:bg-gray-900/50">
+            <div class="flex items-center justify-between">
+              <span class="text-sm font-semibold text-primary-600 dark:text-primary-400">{item.year}</span>
+              <span class="rounded-full bg-gray-100 px-3 py-1 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-300">{item.type}</span>
+            </div>
+            <h3 class="mt-5 text-2xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
+            <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">{item.description}</p>
+            <p class="mt-6 border-t border-gray-100 pt-4 text-xs font-medium text-gray-500 dark:border-gray-800 dark:text-gray-400">{item.source}</p>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline" class="scroll-mt-24 border-t border-gray-200 dark:border-gray-800">
+    <div class="mx-auto max-w-5xl px-6 py-16 lg:py-20">
+      <div class="text-center">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">05 · Dalam waktu</p>
+        <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white sm:text-4xl">Jejak dalam Waktu</h2>
+        <p class="mx-auto mt-4 max-w-2xl leading-7 text-gray-600 dark:text-gray-400">
+          Garis waktu ini hanya memuat titik yang dapat ditelusuri dari sumber publik terindeks; bukan klaim bahwa seluruh perjalanan karier telah terdokumentasi.
+        </p>
+      </div>
+
+      <div class="relative mt-12">
+        <div class="absolute left-[23px] top-0 hidden h-full w-px bg-gray-200 dark:bg-gray-800 sm:block"></div>
+
+        <div class="space-y-7">
+          {
+            timeline.map((item) => (
+              <article class="relative grid gap-5 sm:grid-cols-[48px_120px_1fr] sm:items-start">
+                <div class="relative z-10 hidden h-12 w-12 items-center justify-center rounded-full border border-gray-200 bg-white text-xs font-bold text-primary-600 dark:border-gray-700 dark:bg-gray-950 sm:flex">
+                  •
+                </div>
+                <div class="text-sm font-bold text-primary-600 dark:text-primary-400">{item.year}</div>
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900 dark:text-white">{item.title}</h3>
+                  <p class="mt-2 leading-7 text-gray-600 dark:text-gray-400">{item.text}</p>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONAL -->
+  <section id="personal" class="scroll-mt-24 bg-gray-950 text-white">
+    <div class="mx-auto max-w-5xl px-6 py-16 lg:py-20">
+      <div class="grid gap-10 md:grid-cols-[auto_1fr] md:items-center">
+        <div class="flex h-20 w-20 items-center justify-center rounded-3xl border border-white/10 bg-white/5 text-3xl">
+          5K
+        </div>
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-300">06 · Di luar angka</p>
+          <h2 class="mt-2 text-3xl font-bold sm:text-4xl">Ada sisi personal yang memang pernah dipublikasikan.</h2>
+          <p class="mt-4 max-w-3xl leading-7 text-gray-300">
+            Dalam tulisan “Pajak, Walau Dibenci Namun Dinanti”, Ida menulis bahwa ia terbiasa berlari lima kilometer sebelum pergi ke kantor. Detail ini digunakan di sini hanya sebagai unsur personal yang memang muncul dalam karya publiknya sendiri.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sumber" class="scroll-mt-24 mx-auto max-w-6xl px-6 py-16 lg:py-20">
+    <div class="rounded-3xl border border-gray-200 bg-gray-50 p-7 dark:border-gray-800 dark:bg-gray-900/50 sm:p-10">
+      <div class="max-w-3xl">
+        <p class="text-xs font-semibold uppercase tracking-[0.18em] text-primary-600 dark:text-primary-400">07 · Sumber & verifikasi</p>
+        <h2 class="mt-2 text-3xl font-bold text-gray-900 dark:text-white">Setiap jejak memiliki konteks.</h2>
+        <p class="mt-4 leading-7 text-gray-600 dark:text-gray-400">
+          Halaman ini disusun dari sumber publik terindeks. Status peran dijaga sesuai dengan apa yang secara eksplisit ditunjukkan sumber: penulis tidak disamakan dengan editor, moderator, atau relawan program.
+        </p>
+      </div>
+
+      <div class="mt-8 grid gap-4 md:grid-cols-3">
+        {
+          sourceNotes.map((note, index) => (
+            <div class="rounded-2xl border border-gray-200 bg-white p-5 dark:border-gray-800 dark:bg-gray-950/40">
+              <span class="text-xs font-semibold text-primary-600 dark:text-primary-400">Sumber 0{index + 1}</span>
+              <p class="mt-3 text-sm leading-6 text-gray-600 dark:text-gray-400">{note}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="#karya-tulis" class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-600 dark:border-gray-700 dark:text-gray-300">
+          Kembali ke karya
+        </a>
+        <a href="#timeline" class="rounded-full border border-gray-300 px-4 py-2 text-sm font-semibold text-gray-700 hover:border-primary-300 hover:text-primary-600 dark:border-gray-700 dark:text-gray-300">
+          Lihat timeline
+        </a>
+        <a href={getPermalink('/')} class="rounded-full bg-gray-900 px-4 py-2 text-sm font-semibold text-white hover:bg-gray-800 dark:bg-white dark:text-gray-900">
+          Beranda
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>
