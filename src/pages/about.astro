@@ -37,11 +37,16 @@ const metadata = {
 
   <Stats
     title="Jejak & Dedikasi Publik"
+    classes={{
+      title: 'text-3xl md:text-4xl font-bold tracking-tight mb-8 text-center font-heading',
+      amount: 'text-2xl sm:text-3xl md:text-4xl font-extrabold text-blue-600 dark:text-blue-400 tracking-tight leading-tight',
+      titleItem: 'text-xs sm:text-sm font-medium uppercase tracking-wider text-slate-600 dark:text-slate-400 mt-2 text-center',
+    }}
     stats={[
-      { title: 'Mulai Kedinasan (DJP)', amount: '2002' },
-      { title: 'Gelar Akademik Terverifikasi', amount: 'S2 / S3' },
-      { title: 'Gelar Wicara & Podcast', amount: 'Kata.lo.gue' },
-      { title: 'Komunitas & Pengajaran', amount: 'KM 10' },
+      { amount: '2002', title: 'Perjalanan Abdi Negara' },
+      { amount: 'S.H., M.E., M.Ids.', title: 'Pendidikan & Studi' },
+      { amount: 'Kata.lo.gue', title: 'Ruang Bincang Kebijakan' },
+      { amount: 'KM 10', title: 'Kontribusi & Literasi' },
     ]}
   />
 
@@ -166,11 +171,11 @@ const metadata = {
         icon: 'tabler:microphone',
       },
       {
-        date: '2025–2026',
-        title: 'Kemenkeu Mengajar 10 & Dedikasi Berkelanjutan',
+        date: 'Saat ini',
+        title: 'KPP Madya Dua Jakarta Barat',
         description:
-          'Terlibat sebagai Relawan Pengajar Kemenkeu Mengajar 10 serta aktif menulis opini dan catatan refleksi publik.',
-        icon: 'tabler:heart-handshake',
+          'Menjalankan amanah berdinas di KPP Madya Dua Jakarta Barat, sembari terus aktif sebagai Relawan Pengajar Kemenkeu Mengajar serta menulis opini publik.',
+        icon: 'tabler:building-tax',
         highlight: true,
       },
     ]}
@@ -184,8 +189,8 @@ const metadata = {
     columns={3}
     items={[
       {
-        title: 'Kanwil DJP Banten',
-        description: 'Pusat penugasan hubungan masyarakat, media visit, dan kemitraan Tax Center perguruan tinggi se-Banten.',
+        title: 'Kanwil DJP Banten & Jakarta Barat',
+        description: 'Pusat penugasan hubungan masyarakat, pelayanan unit vertikal, media visit, dan kemitraan Tax Center.',
         icon: 'tabler:map-pin',
       },
       {
