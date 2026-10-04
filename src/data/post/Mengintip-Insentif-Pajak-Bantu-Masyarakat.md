@@ -4,7 +4,7 @@ publishDate: 2021-07-30T00:00:00Z
 author: Ida Rosnida Laila
 title: Mengintip Insentif Pajak Bantu Masyarakat
 excerpt: Refleksi mengenai kebijakan insentif pajak di tengah pandemi Covid-19, upaya pemerintah memulihkan perekonomian, serta pentingnya komunikasi kebijakan agar masyarakat memahami hak dan kewajiban perpajakannya.
-image: /images/mengintip-insentif-pajak-bantu-masyarakat
+image: /images/mengintip-insentif-pajak-bantu-masyarakat.png
 imageAlt: Ilustrasi insentif pajak dan pemulihan ekonomi masyarakat
 category: Pajak & Kebijakan
 tags:
